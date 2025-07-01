@@ -4,29 +4,50 @@
 }
 
 <div class="container mt-5">
-    <h2 class="text-primary mb-4">RetailHub Dashboard</h2>
-    <p class="lead">Navigate to any module below:</p>
+    <h2 class="text-primary mb-4">RetailHub Setup Dashboard</h2>
+    <p class="lead">Set up your master data in logical order:</p>
 
-    <div class="row">
-        <div class="col-md-6">
-            <ul class="list-group mb-4">
-                <li class="list-group-item">@Html.ActionLink("Credit Card Management", "Index", "CreditCard")</li>
-                <li class="list-group-item">@Html.ActionLink("Email Groups", "Index", "EmailGroup")</li>
-                <li class="list-group-item">@Html.ActionLink("Fuel Types", "Index", "FuelType")</li>
-                <li class="list-group-item">@Html.ActionLink("Price Changes", "Index", "PriceChange")</li>
-                <li class="list-group-item">@Html.ActionLink("Role Management", "Index", "Role")</li>
-                <li class="list-group-item">@Html.ActionLink("Site Settings", "Index", "Site")</li>
-            </ul>
+    <div class="card mb-4">
+        <div class="card-header bg-dark text-white">
+            Step 1: Foundational Master Setup
         </div>
-        <div class="col-md-6">
-            <ul class="list-group mb-4">
-                <li class="list-group-item">@Html.ActionLink("Sites (Backup)", "Index", "Sites1")</li>
-                <li class="list-group-item">@Html.ActionLink("Sites (Legacy)", "Index", "sites")</li>
-                <li class="list-group-item">@Html.ActionLink("Supplier Management", "Index", "Supplier")</li>
-                <li class="list-group-item">@Html.ActionLink("User Management", "Index", "User")</li>
-                <li class="list-group-item">@Html.ActionLink("Valet Pricing", "Index", "ValetPrice")</li>
-                <li class="list-group-item">@Html.ActionLink("Valet Types", "Index", "ValetType")</li>
-            </ul>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">@Html.ActionLink("Supplier Management", "Index", "Supplier") - Add your suppliers first.</li>
+            <li class="list-group-item">@Html.ActionLink("Fuel Types", "Index", "FuelType") - Set fuel categories before pricing.</li>
+            <li class="list-group-item">@Html.ActionLink("Valet Types", "Index", "ValetType") - Define valet types.</li>
+            <li class="list-group-item">@Html.ActionLink("Role Management", "Index", "Role") - Create user roles.</li>
+        </ul>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            Step 2: Configure Dependent Modules
         </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">@Html.ActionLink("Site Setup", "Index", "Site") - Assign a supplier to each site.</li>
+            <li class="list-group-item">@Html.ActionLink("Valet Pricing", "Index", "ValetPrice") - Set prices for each valet type.</li>
+            <li class="list-group-item">@Html.ActionLink("Price Changes", "Index", "PriceChange") - Manage fuel price updates.</li>
+        </ul>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header bg-success text-white">
+            Step 3: User & Communication Setup
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">@Html.ActionLink("User Management", "Index", "User") - Assign roles and manage access.</li>
+            <li class="list-group-item">@Html.ActionLink("Email Groups", "Index", "EmailGroup") - Define email groups for alerts.</li>
+        </ul>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header bg-secondary text-white">
+            Optional or Specialized Modules
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">@Html.ActionLink("Credit Card Management", "Index", "CreditCard")</li>
+            <li class="list-group-item">@Html.ActionLink("Sites (Legacy)", "Index", "sites")</li>
+            <li class="list-group-item">@Html.ActionLink("Sites (Backup)", "Index", "Sites1")</li>
+        </ul>
     </div>
 </div>
