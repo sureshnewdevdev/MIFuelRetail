@@ -1,0 +1,6 @@
+@FuelRetailsMasters_HostAddress = http://localhost:5086
+
+GET {{FuelRetailsMasters_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

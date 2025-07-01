@@ -1,0 +1,14 @@
+C:\MI\FuelRetail\RetailMasters\bin\Debug\net8.0\RetailMasters.deps.json
+C:\MI\FuelRetail\RetailMasters\bin\Debug\net8.0\RetailMasters.runtimeconfig.json
+C:\MI\FuelRetail\RetailMasters\bin\Debug\net8.0\RetailMasters.dll
+C:\MI\FuelRetail\RetailMasters\bin\Debug\net8.0\RetailMasters.pdb
+C:\MI\FuelRetail\RetailMasters\obj\Debug\net8.0\RetailMasters.csproj.AssemblyReference.cache
+C:\MI\FuelRetail\RetailMasters\obj\Debug\net8.0\RetailMasters.GeneratedMSBuildEditorConfig.editorconfig
+C:\MI\FuelRetail\RetailMasters\obj\Debug\net8.0\RetailMasters.AssemblyInfoInputs.cache
+C:\MI\FuelRetail\RetailMasters\obj\Debug\net8.0\RetailMasters.AssemblyInfo.cs
+C:\MI\FuelRetail\RetailMasters\obj\Debug\net8.0\RetailMasters.csproj.CoreCompileInputs.cache
+C:\MI\FuelRetail\RetailMasters\obj\Debug\net8.0\RetailMasters.dll
+C:\MI\FuelRetail\RetailMasters\obj\Debug\net8.0\refint\RetailMasters.dll
+C:\MI\FuelRetail\RetailMasters\obj\Debug\net8.0\RetailMasters.pdb
+C:\MI\FuelRetail\RetailMasters\obj\Debug\net8.0\RetailMasters.genruntimeconfig.cache
+C:\MI\FuelRetail\RetailMasters\obj\Debug\net8.0\ref\RetailMasters.dll

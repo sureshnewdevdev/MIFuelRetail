@@ -1,0 +1,6 @@
+@MIFuelRetail_HostAddress = http://localhost:5004
+
+GET {{MIFuelRetail_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
