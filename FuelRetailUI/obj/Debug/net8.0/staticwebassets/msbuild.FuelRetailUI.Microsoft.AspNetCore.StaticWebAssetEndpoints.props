@@ -28,13 +28,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\FuelRetailUI.9p9tgfvfat.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"9p9tgfvfat"},{"Name":"integrity","Value":"sha256-XTI1On\u002B\u002BbrEz3VPVKLb5i7MP/XpAzsoJ/da8q5PlO8c="},{"Name":"label","Value":"_content/FuelRetailUI/FuelRetailUI.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1130"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022XTI1On\u002B\u002BbrEz3VPVKLb5i7MP/XpAzsoJ/da8q5PlO8c=\u0022"},{"Name":"Last-Modified","Value":"Sun, 22 Jun 2025 13:27:01 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1130"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022XTI1On\u002B\u002BbrEz3VPVKLb5i7MP/XpAzsoJ/da8q5PlO8c=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Jul 2025 20:24:32 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/FuelRetailUI/FuelRetailUI.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\FuelRetailUI.9p9tgfvfat.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-XTI1On\u002B\u002BbrEz3VPVKLb5i7MP/XpAzsoJ/da8q5PlO8c="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1130"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022XTI1On\u002B\u002BbrEz3VPVKLb5i7MP/XpAzsoJ/da8q5PlO8c=\u0022"},{"Name":"Last-Modified","Value":"Sun, 22 Jun 2025 13:27:01 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1130"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022XTI1On\u002B\u002BbrEz3VPVKLb5i7MP/XpAzsoJ/da8q5PlO8c=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Jul 2025 20:24:32 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/FuelRetailUI/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>

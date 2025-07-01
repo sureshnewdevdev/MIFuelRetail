@@ -144,24 +144,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MI/FuelRetail/FuelRetailUI/Views/sites/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc2l0ZXNcQ3JlYXRlLmNzaHRtbA==
+[C:/MI/FuelRetail/FuelRetailUI/Views/Site/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l0ZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MI/FuelRetail/FuelRetailUI/Views/sites/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc2l0ZXNcRGVsZXRlLmNzaHRtbA==
+[C:/MI/FuelRetail/FuelRetailUI/Views/Site/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l0ZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MI/FuelRetail/FuelRetailUI/Views/sites/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc2l0ZXNcRGV0YWlscy5jc2h0bWw=
+[C:/MI/FuelRetail/FuelRetailUI/Views/Site/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l0ZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MI/FuelRetail/FuelRetailUI/Views/sites/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc2l0ZXNcRWRpdC5jc2h0bWw=
+[C:/MI/FuelRetail/FuelRetailUI/Views/Site/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l0ZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MI/FuelRetail/FuelRetailUI/Views/sites/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc2l0ZXNcSW5kZXguY3NodG1s
+[C:/MI/FuelRetail/FuelRetailUI/Views/Site/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l0ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/MI/FuelRetail/FuelRetailUI/Views/Supplier/Create.cshtml]

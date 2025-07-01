@@ -34,3 +34,4 @@ C:\MI\FuelRetail\MIFuelRetail\obj\Debug\net8.0\refint\MIFuelRetail.dll
 C:\MI\FuelRetail\MIFuelRetail\obj\Debug\net8.0\MIFuelRetail.pdb
 C:\MI\FuelRetail\MIFuelRetail\obj\Debug\net8.0\MIFuelRetail.genruntimeconfig.cache
 C:\MI\FuelRetail\MIFuelRetail\obj\Debug\net8.0\ref\MIFuelRetail.dll
+C:\MI\FuelRetail\MIFuelRetail\obj\Debug\net8.0\MIFuelRetail.sourcelink.json

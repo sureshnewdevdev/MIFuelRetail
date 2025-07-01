@@ -12,3 +12,4 @@ C:\MI\FuelRetail\RetailMasters\obj\Debug\net8.0\refint\RetailMasters.dll
 C:\MI\FuelRetail\RetailMasters\obj\Debug\net8.0\RetailMasters.pdb
 C:\MI\FuelRetail\RetailMasters\obj\Debug\net8.0\RetailMasters.genruntimeconfig.cache
 C:\MI\FuelRetail\RetailMasters\obj\Debug\net8.0\ref\RetailMasters.dll
+C:\MI\FuelRetail\RetailMasters\obj\Debug\net8.0\RetailMasters.sourcelink.json
