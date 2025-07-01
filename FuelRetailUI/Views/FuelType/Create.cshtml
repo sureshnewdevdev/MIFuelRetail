@@ -1,0 +1,17 @@
+﻿@model RetailMasters.Models.fueltype
+
+<h2>Create Fuel Type</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="fueltypename"></label>
+        <input asp-for="fueltypename" class="form-control" />
+        <span asp-validation-for="fueltypename" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="description"></label>
+        <textarea asp-for="description" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success mt-2">Save</button>
+    <a asp-action="Index" class="btn btn-secondary mt-2">Cancel</a>
+</form>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<RetailMasters.Models.emailgroup>
+
+@{
+    ViewData["Title"] = "Email Groups";
+}
+
+<h2>Email Groups</h2>
+
+<a class="btn btn-primary mb-3" asp-action="Create">Add New Group</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Group Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.groupid</td>
+            <td>@item.groupname</td>
+            <td>
+                <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.groupid">Details</a>
+                <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.groupid">Edit</a>
+                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.groupid">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

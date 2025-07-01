@@ -1,0 +1,35 @@
+﻿@model IEnumerable<RetailMasters.Models.user>
+
+<h2>Users</h2>
+
+<a class="btn btn-primary mb-3" asp-action="Create">Add New User</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Is Active</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.userid</td>
+            <td>@item.username</td>
+            <td>@item.email</td>
+            <td>@item.isactive</td>
+            <td>@item.role?.rolename</td>
+            <td>
+                <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.userid">Details</a>
+                <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.userid">Edit</a>
+                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.userid">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

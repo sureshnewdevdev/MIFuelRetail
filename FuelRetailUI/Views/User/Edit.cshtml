@@ -1,0 +1,53 @@
+﻿@model RetailMasters.Models.user
+
+@{
+    ViewData["Title"] = "Edit User";
+}
+
+<h2>Edit User</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="userid" />
+
+    <div class="form-group">
+        <label asp-for="username" class="control-label">Username</label>
+        <input asp-for="username" class="form-control" />
+        <span asp-validation-for="username" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="passwordhash" class="control-label">Password</label>
+        <input asp-for="passwordhash" class="form-control" type="password" />
+        <span asp-validation-for="passwordhash" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="email" class="control-label">Email</label>
+        <input asp-for="email" class="form-control" />
+        <span asp-validation-for="email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" name="isactive" @(Model != null && Model.isactive == true ? "checked" : "") />
+
+
+        <label asp-for="isactive" class="form-check-label">Is Active</label>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="roleid" class="control-label">Role</label>
+        <select asp-for="roleid" class="form-control" asp-items="ViewBag.roleid">
+            <option value="">-- Select Role --</option>
+        </select>
+        <span asp-validation-for="roleid" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Update</button>
+    <a asp-action="Index" class="btn btn-secondary mt-3">Cancel</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

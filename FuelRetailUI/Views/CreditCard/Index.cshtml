@@ -1,0 +1,36 @@
+﻿@model IEnumerable<RetailMasters.Models.creditcard>
+
+@{
+    ViewData["Title"] = "Credit Cards";
+}
+
+<h2>Credit Cards</h2>
+
+<a class="btn btn-primary mb-3" asp-action="Create">Add New Card</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Card Name</th>
+            <th>Card Type</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.cardid</td>
+            <td>@item.cardname</td>
+            <td>@item.cardtype</td>
+            <td>
+                <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.cardid">Details</a>
+                <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.cardid">Edit</a>
+                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.cardid">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+    

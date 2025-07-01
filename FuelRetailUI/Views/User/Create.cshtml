@@ -1,0 +1,30 @@
+﻿@model RetailMasters.Models.user
+
+<h2>Create User</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="username"></label>
+        <input asp-for="username" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="passwordhash"></label>
+        <input asp-for="passwordhash" class="form-control" type="password" />
+    </div>
+    <div class="form-group">
+        <label asp-for="email"></label>
+        <input asp-for="email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="isactive"></label>
+        <input type="checkbox" class="form-check-input" name="isactive" @(Model != null && Model.isactive == true ? "checked" : "") />
+
+
+    </div>
+    <div class="form-group">
+        <label asp-for="roleid"></label>
+        <select asp-for="roleid" class="form-control" asp-items="ViewBag.roleid"></select>
+    </div>
+    <button type="submit" class="btn btn-success mt-2">Save</button>
+    <a asp-action="Index" class="btn btn-secondary mt-2">Cancel</a>
+</form>

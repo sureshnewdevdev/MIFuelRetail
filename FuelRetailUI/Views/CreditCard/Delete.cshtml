@@ -1,0 +1,22 @@
+﻿@model RetailMasters.Models.creditcard
+
+<h2>Confirm Delete</h2>
+
+<h4>Are you sure you want to delete this credit card?</h4>
+<hr />
+<dl class="row">
+    <dt class="col-sm-2">ID</dt>
+    <dd class="col-sm-10">@Model.cardid</dd>
+
+    <dt class="col-sm-2">Card Name</dt>
+    <dd class="col-sm-10">@Model.cardname</dd>
+
+    <dt class="col-sm-2">Card Type</dt>
+    <dd class="col-sm-10">@Model.cardtype</dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="cardid" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

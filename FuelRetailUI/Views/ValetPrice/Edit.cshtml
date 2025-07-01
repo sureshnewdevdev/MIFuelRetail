@@ -1,0 +1,48 @@
+﻿@model RetailMasters.Models.valetprice
+
+@{
+    ViewData["Title"] = "Edit Valet Price";
+}
+
+<h2>Edit Valet Price</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="valetpriceid" />
+
+    <div class="form-group">
+        <label asp-for="siteid">Site</label>
+        <select asp-for="siteid" class="form-control" asp-items="ViewBag.siteid">
+            <option value="">-- Select Site --</option>
+        </select>
+        <span asp-validation-for="siteid" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="valettypeid">Valet Type</label>
+        <select asp-for="valettypeid" class="form-control" asp-items="ViewBag.valettypeid">
+            <option value="">-- Select Valet Type --</option>
+        </select>
+        <span asp-validation-for="valettypeid" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="price">Price</label>
+        <input asp-for="price" class="form-control" type="number" step="0.01" />
+        <span asp-validation-for="price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="effectivedate">Effective Date</label>
+        <input asp-for="effectivedate" class="form-control" type="date" />
+        <span asp-validation-for="effectivedate" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Save</button>
+    <a asp-action="Index" class="btn btn-secondary mt-3">Cancel</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

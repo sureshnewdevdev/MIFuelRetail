@@ -1,0 +1,19 @@
+﻿@model RetailMasters.Models.creditcard
+
+<h2>Edit Credit Card</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="cardid" />
+    <div class="form-group">
+        <label asp-for="cardname"></label>
+        <input asp-for="cardname" class="form-control" />
+        <span asp-validation-for="cardname" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="cardtype"></label>
+        <input asp-for="cardtype" class="form-control" />
+        <span asp-validation-for="cardtype" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-warning mt-2">Update</button>
+    <a asp-action="Index" class="btn btn-secondary mt-2">Cancel</a>
+</form>

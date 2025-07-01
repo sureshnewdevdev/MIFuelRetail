@@ -1,0 +1,13 @@
+﻿@model RetailMasters.Models.emailgroup
+
+<h2>Create Email Group</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="groupname"></label>
+        <input asp-for="groupname" class="form-control" />
+        <span asp-validation-for="groupname" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success mt-2">Save</button>
+    <a asp-action="Index" class="btn btn-secondary mt-2">Cancel</a>
+</form>

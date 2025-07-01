@@ -1,0 +1,17 @@
+﻿@model RetailMasters.Models.fueltype
+
+<h2>Fuel Type Details</h2>
+
+<dl class="row">
+    <dt class="col-sm-2">ID</dt>
+    <dd class="col-sm-10">@Model.fueltypeid</dd>
+
+    <dt class="col-sm-2">Name</dt>
+    <dd class="col-sm-10">@Model.fueltypename</dd>
+
+    <dt class="col-sm-2">Description</dt>
+    <dd class="col-sm-10">@Model.description</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.fueltypeid" class="btn btn-warning">Edit</a>
+<a asp-action="Index" class="btn btn-secondary">Back</a>

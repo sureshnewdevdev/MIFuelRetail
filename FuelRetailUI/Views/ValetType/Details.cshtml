@@ -1,0 +1,14 @@
+﻿@model RetailMasters.Models.valettype
+
+<h2>Valet Type Details</h2>
+
+<dl class="row">
+    <dt class="col-sm-2">ID</dt>
+    <dd class="col-sm-10">@Model.valettypeid</dd>
+
+    <dt class="col-sm-2">Type Name</dt>
+    <dd class="col-sm-10">@Model.valettypename</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.valettypeid" class="btn btn-warning">Edit</a>
+<a asp-action="Index" class="btn btn-secondary">Back</a>

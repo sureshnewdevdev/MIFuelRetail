@@ -28,6 +28,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=sites}/{action=Index}/{id?}");
+    pattern: "{controller=Supplier}/{action=Index}/{id?}");
 
 app.Run();

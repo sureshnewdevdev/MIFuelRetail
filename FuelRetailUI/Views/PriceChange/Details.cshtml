@@ -1,0 +1,120 @@
+﻿@model RetailMasters.Models.pricechange
+
+@{
+    ViewData["Title"] = "Price Change Details";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>@ViewData["Title"]</h2>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.changeid" class="btn btn-warning">
+                <i class="fas fa-edit"></i> Edit
+            </a>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Back to List
+            </a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title mb-0">Change ID: @Model.changeid</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">Fuel Type:</dt>
+                        <dd class="col-sm-8">
+                            <strong>@Html.DisplayFor(model => model.fueltype.fueltypename)</strong>
+                        </dd>
+
+                        <dt class="col-sm-4">Old Price:</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.oldprice.HasValue)
+                            {
+                                <span class="text-muted">@Model.oldprice.Value.ToString("C")</span>
+                            }
+                            else
+                            {
+                                <span class="text-muted">Not specified</span>
+                            }
+                        </dd>
+
+                        <dt class="col-sm-4">New Price:</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.newprice.HasValue)
+                            {
+                                <strong class="text-primary">@Model.newprice.Value.ToString("C")</strong>
+                            }
+                            else
+                            {
+                                <span class="text-muted">Not specified</span>
+                            }
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">Price Difference:</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.oldprice.HasValue && Model.newprice.HasValue)
+                            {
+                                var difference = Model.newprice.Value - Model.oldprice.Value;
+                                if (difference > 0)
+                                {
+                                    <span class="badge bg-success fs-6">+@difference.ToString("C")</span>
+                                    <small class="text-muted">(Price Increase)</small>
+                                }
+                                else if (difference < 0)
+                                {
+                                    <span class="badge bg-danger fs-6">@difference.ToString("C")</span>
+                                    <small class="text-muted">(Price Decrease)</small>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary fs-6">No Change</span>
+                                }
+                            }
+                            else
+                            {
+                                <span class="text-muted">Cannot calculate</span>
+                            }
+                        </dd>
+
+                        <dt class="col-sm-4">Change Date:</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.changedate.HasValue)
+                            {
+                                <strong>@Model.changedate.Value.ToString("MMMM dd, yyyy")</strong>
+
+                                <br>
+                                <small class="text-muted">@Model.changedate.Value.ToString("hh:mm tt")</small>
+                            }
+                            else
+                            {
+                                <span class="text-muted">Not specified</span>
+                            }
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <div class="btn-group" role="group">
+                <a asp-action="Edit" asp-route-id="@Model.changeid" class="btn btn-warning">
+                    <i class="fas fa-edit"></i> Edit
+                </a>
+                <a asp-action="Delete" asp-route-id="@Model.changeid" class="btn btn-danger">
+                    <i class="fas fa-trash"></i> Delete
+                </a>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-list"></i> Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
