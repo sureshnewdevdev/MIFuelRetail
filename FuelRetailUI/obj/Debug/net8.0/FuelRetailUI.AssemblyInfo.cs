@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FuelRetailUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+62e5f14711f5c1b31c2cde65dd8adb2554ecc7e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("FuelRetailUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FuelRetailUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
