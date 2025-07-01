@@ -1,12 +1,11 @@
-
-# -----------------------------
+﻿# -----------------------------
 # Ignore node_modules (Node.js)
 node_modules/
 
 # Ignore Python virtual environments
 venv/
 .env/
-.vs/
+
 # Ignore .NET build outputs
 bin/
 obj/
@@ -59,5 +58,5 @@ __pycache__/
 *.swp
 *~
 
-# Ignore Visual Studio related files
-*.vs/
+# ✅ Correctly ignore Visual Studio folder
+.vs/
