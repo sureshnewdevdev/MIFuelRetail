@@ -60,3 +60,4 @@ __pycache__/
 
 # ✅ Correctly ignore Visual Studio folder
 .vs/
+.vs

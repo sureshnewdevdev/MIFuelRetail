@@ -22,7 +22,7 @@ obj/
 # Ignore VSCode workspace settings
 .vscode/
 .vscode/*.code-workspace
-
+.vs\
 # Ignore MacOS system files
 .DS_Store
 

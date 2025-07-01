@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\MI\\FuelRetail\\MIFuelRetail\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1952189B-3CFF-41A9-A5FC-113A1D0EF313}|MIFuelRetail.csproj|c:\\mi\\fuelretail\\mifuelretail\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{1952189B-3CFF-41A9-A5FC-113A1D0EF313}|MIFuelRetail.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{0E4F50C5-370B-4C89-AE92-45DEF7B96B16}|..\\FuelRetailUI\\FuelRetailUI.csproj|c:\\mi\\fuelretail\\fuelretailui\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E4F50C5-370B-4C89-AE92-45DEF7B96B16}|..\\FuelRetailUI\\FuelRetailUI.csproj|c:\\mi\\fuelretail\\fuelretailui\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{1952189B-3CFF-41A9-A5FC-113A1D0EF313}|MIFuelRetail.csproj|c:\\mi\\fuelretail\\mifuelretail\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{1952189B-3CFF-41A9-A5FC-113A1D0EF313}|MIFuelRetail.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0E4F50C5-370B-4C89-AE92-45DEF7B96B16}|..\\FuelRetailUI\\FuelRetailUI.csproj|c:\\mi\\fuelretail\\fuelretailui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -41,30 +41,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": ".gitignore",
               "DocumentMoniker": "C:\\MI\\FuelRetail\\MIFuelRetail\\.gitignore",
               "RelativeDocumentMoniker": ".gitignore",
               "ToolTip": "C:\\MI\\FuelRetail\\MIFuelRetail\\.gitignore",
               "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAADwvy8AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-07-01T18:58:15.951Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": ".gitignore",
               "DocumentMoniker": "C:\\MI\\FuelRetail\\FuelRetailUI\\.gitignore",
               "RelativeDocumentMoniker": "..\\FuelRetailUI\\.gitignore",
               "ToolTip": "C:\\MI\\FuelRetail\\FuelRetailUI\\.gitignore",
               "RelativeToolTip": "..\\FuelRetailUI\\.gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAADwvy4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-07-01T17:04:49.977Z",
               "EditorCaption": ""
