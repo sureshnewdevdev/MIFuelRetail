@@ -6,7 +6,7 @@ node_modules/
 # Ignore Python virtual environments
 venv/
 .env/
-
+.vs/
 # Ignore .NET build outputs
 bin/
 obj/
