@@ -1,8 +1,32 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <h2 class="text-primary mb-4">RetailHub Dashboard</h2>
+    <p class="lead">Navigate to any module below:</p>
+
+    <div class="row">
+        <div class="col-md-6">
+            <ul class="list-group mb-4">
+                <li class="list-group-item">@Html.ActionLink("Credit Card Management", "Index", "CreditCard")</li>
+                <li class="list-group-item">@Html.ActionLink("Email Groups", "Index", "EmailGroup")</li>
+                <li class="list-group-item">@Html.ActionLink("Fuel Types", "Index", "FuelType")</li>
+                <li class="list-group-item">@Html.ActionLink("Price Changes", "Index", "PriceChange")</li>
+                <li class="list-group-item">@Html.ActionLink("Role Management", "Index", "Role")</li>
+                <li class="list-group-item">@Html.ActionLink("Site Settings", "Index", "Site")</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <ul class="list-group mb-4">
+                <li class="list-group-item">@Html.ActionLink("Sites (Backup)", "Index", "Sites1")</li>
+                <li class="list-group-item">@Html.ActionLink("Sites (Legacy)", "Index", "sites")</li>
+                <li class="list-group-item">@Html.ActionLink("Supplier Management", "Index", "Supplier")</li>
+                <li class="list-group-item">@Html.ActionLink("User Management", "Index", "User")</li>
+                <li class="list-group-item">@Html.ActionLink("Valet Pricing", "Index", "ValetPrice")</li>
+                <li class="list-group-item">@Html.ActionLink("Valet Types", "Index", "ValetType")</li>
+            </ul>
+        </div>
+    </div>
 </div>
