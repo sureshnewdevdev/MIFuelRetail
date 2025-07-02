@@ -1,19 +1,19 @@
 ﻿@model RetailMasters.Models.Supplier
 
 @{
-    ViewData["Title"] = "Edit Supplier";
+    ViewData["Title"] = "Create Supplier";
 }
 
-<h2>Edit Supplier</h2>
+<h2>Create Supplier</h2>
 
-<form asp-action="Edit" method="post">
-    <input type="hidden" asp-for="Supplierid" />
+<form asp-action="Create" method="post">
     <div class="form-group">
-        <label asp-for="Supdesc"></label>
+        <label asp-for="Supdesc" class="control-label"></label>
         <input asp-for="Supdesc" class="form-control" />
         <span asp-validation-for="Supdesc" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-warning mt-2">Update</button>
+
+    <button type="submit" class="btn btn-success mt-2">Save</button>
     <a asp-action="Index" class="btn btn-secondary mt-2">Cancel</a>
 </form>
 

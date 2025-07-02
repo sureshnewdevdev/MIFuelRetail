@@ -38,7 +38,7 @@ namespace FeulRetailUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("valettypename")] Valettype valettype)
+        public async Task<IActionResult> Create([Bind("Valettypename")] Valettype valettype)
         {
             if (ModelState.IsValid)
             {
@@ -61,7 +61,7 @@ namespace FeulRetailUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("valettypeid,valettypename")] Valettype valettype)
+        public async Task<IActionResult> Edit(int id, [Bind("Valettypeid,Valettypename")] Valettype valettype)
         {
             if (id != valettype.Valettypeid) return NotFound();
 

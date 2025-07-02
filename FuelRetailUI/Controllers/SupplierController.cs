@@ -28,6 +28,7 @@ namespace FeulRetailUI.Controllers
 
             var supplier = await _context.suppliers
                 .FirstOrDefaultAsync(m => m.Supplierid == id);
+
             if (supplier == null) return NotFound();
 
             return View(supplier);
@@ -42,7 +43,7 @@ namespace FeulRetailUI.Controllers
         // POST: Supplier/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("supdesc")] Supplier supplier)
+        public async Task<IActionResult> Create([Bind("Supdesc")] Supplier supplier)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +68,7 @@ namespace FeulRetailUI.Controllers
         // POST: Supplier/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("supplierid,supdesc")] Supplier supplier)
+        public async Task<IActionResult> Edit(int id, [Bind("Supplierid,Supdesc")] Supplier supplier)
         {
             if (id != supplier.Supplierid) return NotFound();
 
@@ -95,6 +96,7 @@ namespace FeulRetailUI.Controllers
 
             var supplier = await _context.suppliers
                 .FirstOrDefaultAsync(m => m.Supplierid == id);
+
             if (supplier == null) return NotFound();
 
             return View(supplier);

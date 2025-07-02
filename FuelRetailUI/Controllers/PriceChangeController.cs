@@ -47,7 +47,7 @@ namespace FeulRetailUI.Controllers
         // POST: PriceChange/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("fueltypeid,oldprice,newprice,changedate")] Pricechange pricechange)
+        public async Task<IActionResult> Create([Bind("Fueltypeid,Oldprice,Newprice,Changedate")] Pricechange pricechange)
         {
             // Remove navigation properties from validation
             ModelState.Remove("fueltype");
@@ -88,7 +88,7 @@ namespace FeulRetailUI.Controllers
         // POST: PriceChange/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("changeid,fueltypeid,oldprice,newprice,changedate")] Pricechange pricechange)
+        public async Task<IActionResult> Edit(int id, [Bind("Changeid,Fueltypeid,Oldprice,Newprice,Changedate")] Pricechange pricechange)
         {
             if (id != pricechange.Changeid) return NotFound();
 
@@ -162,9 +162,7 @@ namespace FeulRetailUI.Controllers
         {
             ViewData["fueltypeid"] = new SelectList(
                 await _context.fueltypes.ToListAsync(),
-                "fueltypeid",
-                "fueltypename",
-                selectedFuelTypeId);
+                "Fueltypeid", "Fueltypename", selectedFuelTypeId);
         }
 
         /// <summary>

@@ -42,7 +42,7 @@ namespace FeulRetailUI.Controllers
         // POST: FuelType/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("fueltypename,description")] Fueltype fueltype)
+        public async Task<IActionResult> Create([Bind("Fueltypename,Description")] Fueltype fueltype)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +67,7 @@ namespace FeulRetailUI.Controllers
         // POST: FuelType/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("fueltypeid,fueltypename,description")] Fueltype fueltype)
+        public async Task<IActionResult> Edit(int id, [Bind("Fueltypeid,Fueltypename,Description")] Fueltype fueltype)
         {
             if (id != fueltype.Fueltypeid) return NotFound();
 
@@ -80,7 +80,7 @@ namespace FeulRetailUI.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!FuelTypeExists(fueltype.Fueltypeid)) return NotFound();
+                    if (!_context.fueltypes.Any(e => e.Fueltypeid == id)) return NotFound();
                     else throw;
                 }
                 return RedirectToAction(nameof(Index));
@@ -113,11 +113,6 @@ namespace FeulRetailUI.Controllers
             }
 
             return RedirectToAction(nameof(Index));
-        }
-
-        private bool FuelTypeExists(int id)
-        {
-            return _context.fueltypes.Any(e => e.Fueltypeid == id);
         }
     }
 }

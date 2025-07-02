@@ -16,12 +16,14 @@ namespace FeulRetailUI.Controllers
             _context = context;
         }
 
+        // GET: Site
         public async Task<IActionResult> Index()
         {
             var sites = _context.sites.Include(s => s.Supplier);
             return View(await sites.ToListAsync());
         }
 
+        // GET: Site/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null) return NotFound();
@@ -35,16 +37,21 @@ namespace FeulRetailUI.Controllers
             return View(site);
         }
 
+        // GET: Site/Create
         public IActionResult Create()
         {
-            ViewData["supplierid"] = new SelectList(_context.suppliers, "supplierid", "supdesc");
+            ViewData["Title"] = "Create Site";
+            ViewData["supplierid"] = new SelectList(_context.suppliers.ToList(), "Supplierid", "Supdesc");
             return View(new Site { Isactive = true });
         }
 
+        // POST: Site/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("sitecode,description,supplierid,shiftstatus,isactive")] Site site)
+        public async Task<IActionResult> Create([Bind("Sitecode,Description,Supplierid,Shiftstatus,Isactive")] Site site)
         {
+            ViewData["Title"] = "Create Site";
+
             if (ModelState.IsValid)
             {
                 _context.Add(site);
@@ -52,10 +59,11 @@ namespace FeulRetailUI.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewData["supplierid"] = new SelectList(_context.suppliers, "supplierid", "supdesc", site.Supplierid);
+            ViewData["supplierid"] = new SelectList(_context.suppliers.ToList(), "Supplierid", "Supdesc", site.Supplierid);
             return View(site);
         }
 
+        // GET: Site/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
@@ -63,13 +71,14 @@ namespace FeulRetailUI.Controllers
             var site = await _context.sites.FindAsync(id);
             if (site == null) return NotFound();
 
-            ViewData["supplierid"] = new SelectList(_context.suppliers, "supplierid", "supdesc", site.Supplierid);
+            ViewData["supplierid"] = new SelectList(_context.suppliers.ToList(), "Supplierid", "Supdesc", site.Supplierid);
             return View(site);
         }
 
+        // POST: Site/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("siteid,sitecode,description,supplierid,shiftstatus,isactive")] Site site)
+        public async Task<IActionResult> Edit(int id, [Bind("Siteid,Sitecode,Description,Supplierid,Shiftstatus,Isactive")] Site site)
         {
             if (id != site.Siteid) return NotFound();
 
@@ -88,10 +97,11 @@ namespace FeulRetailUI.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewData["supplierid"] = new SelectList(_context.suppliers, "supplierid", "supdesc", site.Supplierid);
+            ViewData["supplierid"] = new SelectList(_context.suppliers.ToList(), "Supplierid", "Supdesc", site.Supplierid);
             return View(site);
         }
 
+        // GET: Site/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
@@ -104,6 +114,7 @@ namespace FeulRetailUI.Controllers
             return View(site);
         }
 
+        // POST: Site/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

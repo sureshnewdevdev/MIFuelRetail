@@ -44,7 +44,7 @@ namespace FeulRetailUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("siteid,valettypeid,price,effectivedate")] Valetprice valetprice)
+        public async Task<IActionResult> Create([Bind("Siteid,Valettypeid,Price,Effectivedate")] Valetprice valetprice)
         {
             // Remove navigation properties from validation
             ModelState.Remove("site");
@@ -78,7 +78,7 @@ namespace FeulRetailUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("valetpriceid,siteid,valettypeid,price,effectivedate")] Valetprice valetprice)
+        public async Task<IActionResult> Edit(int id, [Bind("Valetpriceid,Siteid,Valettypeid,Price,Effectivedate")] Valetprice valetprice)
         {
             if (id != valetprice.Valetpriceid) return NotFound();
 
@@ -153,15 +153,11 @@ namespace FeulRetailUI.Controllers
         {
             ViewData["siteid"] = new SelectList(
                 await _context.sites.ToListAsync(),
-                "siteid",
-                "sitecode",
-                selectedSiteId);
+                "Siteid", "Sitecode", selectedSiteId);
 
             ViewData["valettypeid"] = new SelectList(
                 await _context.valettypes.ToListAsync(),
-                "valettypeid",
-                "valettypename",
-                selectedValetTypeId);
+                "Valettypeid", "Valettypename", selectedValetTypeId);
         }
 
         /// <summary>
