@@ -3,13 +3,17 @@ using System.Collections.Generic;
 
 namespace RetailMasters.Models;
 
-public partial class fueltype
+public partial class Fueltype
 {
-    public int fueltypeid { get; set; }
+    public int Fueltypeid { get; set; }
 
-    public string fueltypename { get; set; } = null!;
+    public string Fueltypename { get; set; } = null!;
 
-    public string? description { get; set; }
+    public string? Description { get; set; }
 
-    public virtual ICollection<pricechange> pricechanges { get; set; } = new List<pricechange>();
+    public virtual ICollection<Fuelprice> Fuelprices { get; set; } = new List<Fuelprice>();
+
+    public virtual ICollection<Pricechange> Pricechanges { get; set; } = new List<Pricechange>();
+
+    public virtual ICollection<Tank> Tanks { get; set; } = new List<Tank>();
 }

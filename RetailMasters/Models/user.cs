@@ -3,23 +3,23 @@ using System.Collections.Generic;
 
 namespace RetailMasters.Models;
 
-public partial class user
+public partial class User
 {
-    public int userid { get; set; }
+    public int Userid { get; set; }
 
-    public string username { get; set; } = null!;
+    public string Username { get; set; } = null!;
 
-    public string passwordhash { get; set; } = null!;
+    public string Passwordhash { get; set; } = null!;
 
-    public int? roleid { get; set; }
+    public int? Roleid { get; set; }
 
-    public string? email { get; set; }
+    public string? Email { get; set; }
 
-    public bool? isactive { get; set; }
+    public bool? Isactive { get; set; }
 
-    public virtual ICollection<message> messagereceiverusers { get; set; } = new List<message>();
+    public virtual ICollection<Message> MessageReceiverusers { get; set; } = new List<Message>();
 
-    public virtual ICollection<message> messagesenderusers { get; set; } = new List<message>();
+    public virtual ICollection<Message> MessageSenderusers { get; set; } = new List<Message>();
 
-    public virtual role? role { get; set; }
+    public virtual Role? Role { get; set; }
 }

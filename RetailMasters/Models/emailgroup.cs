@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace RetailMasters.Models;
 
-public partial class emailgroup
+public partial class Emailgroup
 {
-    public int groupid { get; set; }
+    public int Groupid { get; set; }
 
-    public string? groupname { get; set; }
+    public string? Groupname { get; set; }
 }

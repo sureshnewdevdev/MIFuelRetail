@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RetailMasters.Models.pricechange>
+﻿@model IEnumerable<RetailMasters.Models.Pricechange>
 
 @{
     ViewData["Title"] = "Price Changes";
@@ -31,14 +31,14 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@Html.DisplayFor(modelItem => item.changeid)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Changeid)</td>
                                 <td>
-                                    <strong>@Html.DisplayFor(modelItem => item.fueltype.fueltypename)</strong>
+                                    <strong>@Html.DisplayFor(modelItem => item.Fueltype.Fueltypename)</strong>
                                 </td>
                                 <td>
-                                    @if (item.oldprice.HasValue)
+                                    @if (item.Oldprice.HasValue)
                                     {
-                                        <span class="text-muted">@item.oldprice.Value.ToString("C")</span>
+                                        <span class="text-muted">@item.Oldprice.Value.ToString("C")</span>
                                     }
                                     else
                                     {
@@ -46,9 +46,9 @@
                                     }
                                 </td>
                                 <td>
-                                    @if (item.newprice.HasValue)
+                                    @if (item.Newprice.HasValue)
                                     {
-                                        <strong>@item.newprice.Value.ToString("C")</strong>
+                                        <strong>@item.Newprice.Value.ToString("C")</strong>
                                     }
                                     else
                                     {
@@ -56,9 +56,9 @@
                                     }
                                 </td>
                                 <td>
-                                    @if (item.oldprice.HasValue && item.newprice.HasValue)
+                                    @if (item.Oldprice.HasValue && item.Newprice.HasValue)
                                     {
-                                        var difference = item.newprice.Value - item.oldprice.Value;
+                                        var difference = item.Newprice.Value - item.Oldprice.Value;
                                         if (difference > 0)
                                         {
                                             <span class="badge bg-success">+@difference.ToString("C")</span>
@@ -78,9 +78,9 @@
                                     }
                                 </td>
                                 <td>
-                                    @if (item.changedate.HasValue)
+                                    @if (item.Changedate.HasValue)
                                     {
-                                        @item.changedate.Value.ToString("MMM dd, yyyy HH:mm")
+                                        @item.Changedate.Value.ToString("MMM dd, yyyy HH:mm")
                                     }
                                     else
                                     {
@@ -88,11 +88,11 @@
                                     }
                                 </td>
                                 <td>
-                                    <a asp-action="Edit" asp-route-id="@item.changeid"
+                                    <a asp-action="Edit" asp-route-id="@item.Changeid"
                                        class="btn btn-sm btn-warning me-1">Edit</a>
-                                    <a asp-action="Details" asp-route-id="@item.changeid"
+                                    <a asp-action="Details" asp-route-id="@item.Changeid"
                                        class="btn btn-sm btn-info me-1">Details</a>
-                                    <a asp-action="Delete" asp-route-id="@item.changeid"
+                                    <a asp-action="Delete" asp-route-id="@item.Changeid"
                                        class="btn btn-sm btn-danger">Delete</a>
                                 </td>
                             </tr>

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace RetailMasters.Models;
 
-public partial class creditcard
+public partial class Creditcard
 {
-    public int cardid { get; set; }
+    public int Cardid { get; set; }
 
-    public string? cardname { get; set; }
+    public string? Cardname { get; set; }
 
-    public string? cardtype { get; set; }
+    public string? Cardtype { get; set; }
 }

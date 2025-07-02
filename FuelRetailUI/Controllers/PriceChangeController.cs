@@ -18,8 +18,8 @@ namespace FeulRetailUI.Controllers
         public async Task<IActionResult> Index()
         {
             var priceChanges = _context.pricechanges
-                .Include(p => p.fueltype)
-                .OrderByDescending(p => p.changedate);
+                .Include(p => p.Fueltype)
+                .OrderByDescending(p => p.Changedate);
             return View(await priceChanges.ToListAsync());
         }
 
@@ -29,8 +29,8 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var priceChange = await _context.pricechanges
-                .Include(p => p.fueltype)
-                .FirstOrDefaultAsync(m => m.changeid == id);
+                .Include(p => p.Fueltype)
+                .FirstOrDefaultAsync(m => m.Changeid == id);
 
             if (priceChange == null) return NotFound();
 
@@ -47,15 +47,15 @@ namespace FeulRetailUI.Controllers
         // POST: PriceChange/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("fueltypeid,oldprice,newprice,changedate")] pricechange pricechange)
+        public async Task<IActionResult> Create([Bind("fueltypeid,oldprice,newprice,changedate")] Pricechange pricechange)
         {
             // Remove navigation properties from validation
             ModelState.Remove("fueltype");
 
             // Set default change date if not provided
-            if (pricechange.changedate == null)
+            if (pricechange.Changedate == null)
             {
-                pricechange.changedate = DateTime.Now;
+                pricechange.Changedate = DateTime.Now;
             }
 
             if (ModelState.IsValid)
@@ -69,7 +69,7 @@ namespace FeulRetailUI.Controllers
             LogValidationErrors();
 
             // Repopulate dropdowns if validation fails
-            await PopulateDropdownsAsync(pricechange.fueltypeid);
+            await PopulateDropdownsAsync(pricechange.Fueltypeid);
             return View(pricechange);
         }
 
@@ -81,16 +81,16 @@ namespace FeulRetailUI.Controllers
             var pricechange = await _context.pricechanges.FindAsync(id);
             if (pricechange == null) return NotFound();
 
-            await PopulateDropdownsAsync(pricechange.fueltypeid);
+            await PopulateDropdownsAsync(pricechange.Fueltypeid);
             return View(pricechange);
         }
 
         // POST: PriceChange/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("changeid,fueltypeid,oldprice,newprice,changedate")] pricechange pricechange)
+        public async Task<IActionResult> Edit(int id, [Bind("changeid,fueltypeid,oldprice,newprice,changedate")] Pricechange pricechange)
         {
-            if (id != pricechange.changeid) return NotFound();
+            if (id != pricechange.Changeid) return NotFound();
 
             // Remove navigation properties from validation
             ModelState.Remove("fueltype");
@@ -105,7 +105,7 @@ namespace FeulRetailUI.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!await PriceChangeExistsAsync(pricechange.changeid))
+                    if (!await PriceChangeExistsAsync(pricechange.Changeid))
                     {
                         return NotFound();
                     }
@@ -120,7 +120,7 @@ namespace FeulRetailUI.Controllers
             LogValidationErrors();
 
             // Repopulate dropdowns if validation fails
-            await PopulateDropdownsAsync(pricechange.fueltypeid);
+            await PopulateDropdownsAsync(pricechange.Fueltypeid);
             return View(pricechange);
         }
 
@@ -130,8 +130,8 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var pricechange = await _context.pricechanges
-                .Include(p => p.fueltype)
-                .FirstOrDefaultAsync(m => m.changeid == id);
+                .Include(p => p.Fueltype)
+                .FirstOrDefaultAsync(m => m.Changeid == id);
 
             if (pricechange == null) return NotFound();
 
@@ -174,7 +174,7 @@ namespace FeulRetailUI.Controllers
         /// <returns>True if exists, false otherwise</returns>
         private async Task<bool> PriceChangeExistsAsync(int id)
         {
-            return await _context.pricechanges.AnyAsync(e => e.changeid == id);
+            return await _context.pricechanges.AnyAsync(e => e.Changeid == id);
         }
 
         /// <summary>

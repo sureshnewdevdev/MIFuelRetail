@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RetailMasters.Models.creditcard>
+﻿@model IEnumerable<RetailMasters.Models.Creditcard>
 
 @{
     ViewData["Title"] = "Credit Cards";
@@ -21,13 +21,13 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>@item.cardid</td>
-            <td>@item.cardname</td>
-            <td>@item.cardtype</td>
+            <td>@item.Cardid</td>
+            <td>@item.Cardname</td>
+            <td>@item.Cardtype</td>
             <td>
-                <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.cardid">Details</a>
-                <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.cardid">Edit</a>
-                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.cardid">Delete</a>
+                <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Cardid">Details</a>
+                <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.Cardid">Edit</a>
+                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Cardid">Delete</a>
             </td>
         </tr>
     }

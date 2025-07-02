@@ -3,19 +3,19 @@ using System.Collections.Generic;
 
 namespace RetailMasters.Models;
 
-public partial class valetprice
+public partial class Valetprice
 {
-    public int valetpriceid { get; set; }
+    public int Valetpriceid { get; set; }
 
-    public int siteid { get; set; }
+    public int Siteid { get; set; }
 
-    public int valettypeid { get; set; }
+    public int Valettypeid { get; set; }
 
-    public decimal? price { get; set; }
+    public decimal? Price { get; set; }
 
-    public DateOnly? effectivedate { get; set; }
+    public DateOnly? Effectivedate { get; set; }
 
-    public virtual site site { get; set; } = null!;
+    public virtual Site Site { get; set; } = null!;
 
-    public virtual valettype valettype { get; set; } = null!;
+    public virtual Valettype Valettype { get; set; } = null!;
 }

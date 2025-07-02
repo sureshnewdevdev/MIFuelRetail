@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 namespace RetailMasters.Models;
 
-public partial class pricechange
+public partial class Pricechange
 {
-    public int changeid { get; set; }
+    public int Changeid { get; set; }
 
-    public int fueltypeid { get; set; }
+    public int Fueltypeid { get; set; }
 
-    public decimal? oldprice { get; set; }
+    public decimal? Oldprice { get; set; }
 
-    public decimal? newprice { get; set; }
+    public decimal? Newprice { get; set; }
 
-    public DateTime? changedate { get; set; }
+    public DateTime? Changedate { get; set; }
 
-    public virtual fueltype fueltype { get; set; } = null!;
+    public virtual Fueltype Fueltype { get; set; } = null!;
 }

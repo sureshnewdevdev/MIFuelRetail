@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace RetailMasters.Models;
 
-public partial class role
+public partial class Role
 {
-    public int roleid { get; set; }
+    public int Roleid { get; set; }
 
-    public string rolename { get; set; } = null!;
+    public string Rolename { get; set; } = null!;
 
-    public virtual ICollection<user> users { get; set; } = new List<user>();
+    public virtual ICollection<User> Users { get; set; } = new List<User>();
 }

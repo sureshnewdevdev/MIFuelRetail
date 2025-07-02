@@ -1,12 +1,12 @@
-﻿@model RetailMasters.Models.role
+﻿@model RetailMasters.Models.Role
 
 <h2>Create Role</h2>
 
 <form asp-action="Create" method="post">
     <div class="form-group">
-        <label asp-for="rolename"></label>
-        <input asp-for="rolename" class="form-control" />
-        <span asp-validation-for="rolename" class="text-danger"></span>
+        <label asp-for="Rolename"></label>
+        <input asp-for="Rolename" class="form-control" />
+        <span asp-validation-for="Rolename" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-success mt-2">Save</button>
     <a asp-action="Index" class="btn btn-secondary mt-2">Cancel</a>

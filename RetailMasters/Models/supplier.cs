@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace RetailMasters.Models;
 
-public partial class supplier
+public partial class Supplier
 {
-    public int supplierid { get; set; }
+    public int Supplierid { get; set; }
 
-    public string supdesc { get; set; } = null!;
+    public string Supdesc { get; set; } = null!;
 
-    public virtual ICollection<site> sites { get; set; } = new List<site>();
+    public virtual ICollection<Site> Sites { get; set; } = new List<Site>();
 }

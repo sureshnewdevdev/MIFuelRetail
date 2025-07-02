@@ -25,7 +25,7 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var emailgroup = await _context.emailgroups
-                .FirstOrDefaultAsync(m => m.groupid == id);
+                .FirstOrDefaultAsync(m => m.Groupid == id);
             if (emailgroup == null) return NotFound();
 
             return View(emailgroup);
@@ -38,7 +38,7 @@ namespace FeulRetailUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("groupname")] emailgroup emailgroup)
+        public async Task<IActionResult> Create([Bind("groupname")] Emailgroup emailgroup)
         {
             if (ModelState.IsValid)
             {
@@ -61,9 +61,9 @@ namespace FeulRetailUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("groupid,groupname")] emailgroup emailgroup)
+        public async Task<IActionResult> Edit(int id, [Bind("groupid,groupname")] Emailgroup emailgroup)
         {
-            if (id != emailgroup.groupid) return NotFound();
+            if (id != emailgroup.Groupid) return NotFound();
 
             if (ModelState.IsValid)
             {
@@ -74,7 +74,7 @@ namespace FeulRetailUI.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!_context.emailgroups.Any(e => e.groupid == id))
+                    if (!_context.emailgroups.Any(e => e.Groupid == id))
                         return NotFound();
                     else throw;
                 }
@@ -88,7 +88,7 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var emailgroup = await _context.emailgroups
-                .FirstOrDefaultAsync(m => m.groupid == id);
+                .FirstOrDefaultAsync(m => m.Groupid == id);
             if (emailgroup == null) return NotFound();
 
             return View(emailgroup);

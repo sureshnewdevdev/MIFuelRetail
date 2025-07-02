@@ -1,17 +1,17 @@
-﻿@model RetailMasters.Models.creditcard
+﻿@model RetailMasters.Models.Creditcard
 
 <h2>Create Credit Card</h2>
 
 <form asp-action="Create" method="post">
     <div class="form-group">
-        <label asp-for="cardname"></label>
-        <input asp-for="cardname" class="form-control" />
-        <span asp-validation-for="cardname" class="text-danger"></span>
+        <label asp-for="Cardname"></label>
+        <input asp-for="Cardname" class="form-control" />
+        <span asp-validation-for="Cardname" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="cardtype"></label>
-        <input asp-for="cardtype" class="form-control" />
-        <span asp-validation-for="cardtype" class="text-danger"></span>
+        <label asp-for="Cardtype"></label>
+        <input asp-for="Cardtype" class="form-control" />
+        <span asp-validation-for="Cardtype" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-success mt-2">Save</button>
     <a asp-action="Index" class="btn btn-secondary mt-2">Cancel</a>

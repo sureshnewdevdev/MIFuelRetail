@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MIFuelRetail")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e67f9e7d61d5456863f5df106df33c54284fcd16")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a1644ebd95e83e000b223adc80db1f55c9258c9")]
 [assembly: System.Reflection.AssemblyProductAttribute("MIFuelRetail")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MIFuelRetail")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

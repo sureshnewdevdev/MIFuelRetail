@@ -18,7 +18,7 @@ namespace FeulRetailUI.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var sites = _context.sites.Include(s => s.supplier);
+            var sites = _context.sites.Include(s => s.Supplier);
             return View(await sites.ToListAsync());
         }
 
@@ -27,8 +27,8 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var site = await _context.sites
-                .Include(s => s.supplier)
-                .FirstOrDefaultAsync(m => m.siteid == id);
+                .Include(s => s.Supplier)
+                .FirstOrDefaultAsync(m => m.Siteid == id);
 
             if (site == null) return NotFound();
 
@@ -43,7 +43,7 @@ namespace FeulRetailUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("sitecode,description,supplierid,shiftstatus,isactive")] site site)
+        public async Task<IActionResult> Create([Bind("sitecode,description,supplierid,shiftstatus,isactive")] Site site)
         {
             if (ModelState.IsValid)
             {
@@ -52,7 +52,7 @@ namespace FeulRetailUI.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewData["supplierid"] = new SelectList(_context.suppliers, "supplierid", "supdesc", site.supplierid);
+            ViewData["supplierid"] = new SelectList(_context.suppliers, "supplierid", "supdesc", site.Supplierid);
             return View(site);
         }
 
@@ -63,15 +63,15 @@ namespace FeulRetailUI.Controllers
             var site = await _context.sites.FindAsync(id);
             if (site == null) return NotFound();
 
-            ViewData["supplierid"] = new SelectList(_context.suppliers, "supplierid", "supdesc", site.supplierid);
+            ViewData["supplierid"] = new SelectList(_context.suppliers, "supplierid", "supdesc", site.Supplierid);
             return View(site);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("siteid,sitecode,description,supplierid,shiftstatus,isactive")] site site)
+        public async Task<IActionResult> Edit(int id, [Bind("siteid,sitecode,description,supplierid,shiftstatus,isactive")] Site site)
         {
-            if (id != site.siteid) return NotFound();
+            if (id != site.Siteid) return NotFound();
 
             if (ModelState.IsValid)
             {
@@ -82,13 +82,13 @@ namespace FeulRetailUI.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!_context.sites.Any(e => e.siteid == id)) return NotFound();
+                    if (!_context.sites.Any(e => e.Siteid == id)) return NotFound();
                     else throw;
                 }
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewData["supplierid"] = new SelectList(_context.suppliers, "supplierid", "supdesc", site.supplierid);
+            ViewData["supplierid"] = new SelectList(_context.suppliers, "supplierid", "supdesc", site.Supplierid);
             return View(site);
         }
 
@@ -97,8 +97,8 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var site = await _context.sites
-                .Include(s => s.supplier)
-                .FirstOrDefaultAsync(m => m.siteid == id);
+                .Include(s => s.Supplier)
+                .FirstOrDefaultAsync(m => m.Siteid == id);
             if (site == null) return NotFound();
 
             return View(site);

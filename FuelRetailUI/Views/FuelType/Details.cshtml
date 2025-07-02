@@ -1,17 +1,17 @@
-﻿@model RetailMasters.Models.fueltype
+﻿@model RetailMasters.Models.Fueltype
 
 <h2>Fuel Type Details</h2>
 
 <dl class="row">
     <dt class="col-sm-2">ID</dt>
-    <dd class="col-sm-10">@Model.fueltypeid</dd>
+    <dd class="col-sm-10">@Model.Fueltypeid</dd>
 
     <dt class="col-sm-2">Name</dt>
-    <dd class="col-sm-10">@Model.fueltypename</dd>
+    <dd class="col-sm-10">@Model.Fueltypename</dd>
 
     <dt class="col-sm-2">Description</dt>
-    <dd class="col-sm-10">@Model.description</dd>
+    <dd class="col-sm-10">@Model.Description</dd>
 </dl>
 
-<a asp-action="Edit" asp-route-id="@Model.fueltypeid" class="btn btn-warning">Edit</a>
+<a asp-action="Edit" asp-route-id="@Model.Fueltypeid" class="btn btn-warning">Edit</a>
 <a asp-action="Index" class="btn btn-secondary">Back</a>

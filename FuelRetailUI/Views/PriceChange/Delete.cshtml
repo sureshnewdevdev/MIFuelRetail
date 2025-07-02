@@ -1,4 +1,4 @@
-﻿@model RetailMasters.Models.pricechange
+﻿@model RetailMasters.Models.Pricechange
 
 @{
     ViewData["Title"] = "Delete Price Change";
@@ -20,7 +20,7 @@
     <div class="card border-danger">
         <div class="card-header bg-danger text-white">
             <h5 class="card-title mb-0">
-                <i class="fas fa-trash"></i> Confirm Deletion - Change ID: @Model.changeid
+                <i class="fas fa-trash"></i> Confirm Deletion - Change ID: @Model.Changeid
             </h5>
         </div>
         <div class="card-body">
@@ -29,14 +29,14 @@
                     <dl class="row">
                         <dt class="col-sm-4">Fuel Type:</dt>
                         <dd class="col-sm-8">
-                            <strong>@Html.DisplayFor(model => model.fueltype.fueltypename)</strong>
+                            <strong>@Html.DisplayFor(model => model.Fueltype.Fueltypename)</strong>
                         </dd>
 
                         <dt class="col-sm-4">Old Price:</dt>
                         <dd class="col-sm-8">
-                            @if (Model.oldprice.HasValue)
+                            @if (Model.Oldprice.HasValue)
                             {
-                                @Model.oldprice.Value.ToString("C")
+                                @Model.Oldprice.Value.ToString("C")
                             }
                             else
                             {
@@ -46,9 +46,9 @@
 
                         <dt class="col-sm-4">New Price:</dt>
                         <dd class="col-sm-8">
-                            @if (Model.newprice.HasValue)
+                            @if (Model.Newprice.HasValue)
                             {
-                                <strong>@Model.newprice.Value.ToString("C")</strong>
+                                <strong>@Model.Newprice.Value.ToString("C")</strong>
                             }
                             else
                             {
@@ -62,9 +62,9 @@
                     <dl class="row">
                         <dt class="col-sm-4">Price Difference:</dt>
                         <dd class="col-sm-8">
-                            @if (Model.oldprice.HasValue && Model.newprice.HasValue)
+                            @if (Model.Oldprice.HasValue && Model.Newprice.HasValue)
                             {
-                                var difference = Model.newprice.Value - Model.oldprice.Value;
+                                var difference = Model.Newprice.Value - Model.Oldprice.Value;
                                 if (difference > 0)
                                 {
                                     <span class="badge bg-success">+@difference.ToString("C")</span>
@@ -86,9 +86,9 @@
 
                         <dt class="col-sm-4">Change Date:</dt>
                         <dd class="col-sm-8">
-                            @if (Model.changedate.HasValue)
+                            @if (Model.Changedate.HasValue)
                             {
-                                <strong>@Model.changedate.Value.ToString("MMMM dd, yyyy hh:mm tt")</strong>
+                                <strong>@Model.Changedate.Value.ToString("MMMM dd, yyyy hh:mm tt")</strong>
                             }
                             else
                             {
@@ -102,12 +102,12 @@
 
         <div class="card-footer">
             <form asp-action="Delete" method="post" class="d-inline">
-                <input type="hidden" asp-for="changeid" />
+                <input type="hidden" asp-for="Changeid" />
                 <button type="submit" class="btn btn-danger">
                     <i class="fas fa-trash"></i> Yes, Delete This Record
                 </button>
             </form>
-            <a asp-action="Details" asp-route-id="@Model.changeid" class="btn btn-info">
+            <a asp-action="Details" asp-route-id="@Model.Changeid" class="btn btn-info">
                 <i class="fas fa-eye"></i> View Details Instead
             </a>
             <a asp-action="Index" class="btn btn-secondary">

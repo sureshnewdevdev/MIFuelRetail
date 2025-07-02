@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RetailMasters.Models.role>
+﻿@model IEnumerable<RetailMasters.Models.Role>
 
 @{
     ViewData["Title"] = "Roles";
@@ -20,12 +20,12 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.roleid</td>
-                <td>@item.rolename</td>
+                <td>@item.Roleid</td>
+                <td>@item.Rolename</td>
                 <td>
-                    <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.roleid">Details</a>
-                    <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.roleid">Edit</a>
-                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.roleid">Delete</a>
+                    <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Roleid">Details</a>
+                    <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.Roleid">Edit</a>
+                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Roleid">Delete</a>
                 </td>
             </tr>
         }

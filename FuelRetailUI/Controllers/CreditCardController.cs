@@ -25,7 +25,7 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var creditcard = await _context.creditcards
-                .FirstOrDefaultAsync(m => m.cardid == id);
+                .FirstOrDefaultAsync(m => m.Cardid == id);
             if (creditcard == null) return NotFound();
 
             return View(creditcard);
@@ -38,7 +38,7 @@ namespace FeulRetailUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("cardname,cardtype")] creditcard creditcard)
+        public async Task<IActionResult> Create([Bind("cardname,cardtype")] Creditcard creditcard)
         {
             if (ModelState.IsValid)
             {
@@ -61,9 +61,9 @@ namespace FeulRetailUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("cardid,cardname,cardtype")] creditcard creditcard)
+        public async Task<IActionResult> Edit(int id, [Bind("cardid,cardname,cardtype")] Creditcard creditcard)
         {
-            if (id != creditcard.cardid) return NotFound();
+            if (id != creditcard.Cardid) return NotFound();
 
             if (ModelState.IsValid)
             {
@@ -74,7 +74,7 @@ namespace FeulRetailUI.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!_context.creditcards.Any(e => e.cardid == id))
+                    if (!_context.creditcards.Any(e => e.Cardid == id))
                         return NotFound();
                     else throw;
                 }
@@ -88,7 +88,7 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var creditcard = await _context.creditcards
-                .FirstOrDefaultAsync(m => m.cardid == id);
+                .FirstOrDefaultAsync(m => m.Cardid == id);
             if (creditcard == null) return NotFound();
 
             return View(creditcard);

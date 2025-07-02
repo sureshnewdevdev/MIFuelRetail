@@ -18,16 +18,16 @@ namespace FuelRetailUI.Controllers
 
         // GET: api/Sites
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<site>>> GetSites()
+        public async Task<ActionResult<IEnumerable<Site>>> GetSites()
         {
-            return await _context.sites.Include(s => s.supplier).ToListAsync();
+            return await _context.sites.Include(s => s.Supplier).ToListAsync();
         }
 
         // GET: api/Sites/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<site>> GetSite(int id)
+        public async Task<ActionResult<Site>> GetSite(int id)
         {
-            var site = await _context.sites.Include(s => s.supplier).FirstOrDefaultAsync(s => s.siteid == id);
+            var site = await _context.sites.Include(s => s.Supplier).FirstOrDefaultAsync(s => s.Siteid == id);
 
             if (site == null)
             {
@@ -39,19 +39,19 @@ namespace FuelRetailUI.Controllers
 
         // POST: api/Sites
         [HttpPost]
-        public async Task<ActionResult<site>> CreateSite(site site)
+        public async Task<ActionResult<Site>> CreateSite(Site site)
         {
             _context.sites.Add(site);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetSite), new { id = site.siteid }, site);
+            return CreatedAtAction(nameof(GetSite), new { id = site.Siteid }, site);
         }
 
         // PUT: api/Sites/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateSite(int id, site site)
+        public async Task<IActionResult> UpdateSite(int id, Site site)
         {
-            if (id != site.siteid)
+            if (id != site.Siteid)
             {
                 return BadRequest();
             }
@@ -92,7 +92,7 @@ namespace FuelRetailUI.Controllers
 
         private bool SiteExists(int id)
         {
-            return _context.sites.Any(e => e.siteid == id);
+            return _context.sites.Any(e => e.Siteid == id);
         }
     }
 }

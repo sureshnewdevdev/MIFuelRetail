@@ -1,4 +1,4 @@
-﻿@model RetailMasters.Models.pricechange
+﻿@model RetailMasters.Models.Pricechange
 
 @{
     ViewData["Title"] = "Edit Price Change";
@@ -14,48 +14,48 @@
 
     <div class="card">
         <div class="card-header">
-            <h5 class="card-title mb-0">Editing Change ID: @Model.changeid</h5>
+            <h5 class="card-title mb-0">Editing Change ID: @Model.Changeid</h5>
         </div>
         <div class="card-body">
             @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
 
             <form asp-action="Edit" method="post">
-                <input type="hidden" asp-for="changeid" />
+                <input type="hidden" asp-for="Changeid" />
 
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group mb-3">
-                            <label asp-for="fueltypeid" class="form-label">Fuel Type <span class="text-danger">*</span></label>
-                            <select asp-for="fueltypeid" class="form-select" asp-items="ViewBag.fueltypeid" required>
+                            <label asp-for="Fueltypeid" class="form-label">Fuel Type <span class="text-danger">*</span></label>
+                            <select asp-for="Fueltypeid" class="form-select" asp-items="ViewBag.fueltypeid" required>
                                 <option value="">-- Select Fuel Type --</option>
                             </select>
-                            <span asp-validation-for="fueltypeid" class="text-danger"></span>
+                            <span asp-validation-for="Fueltypeid" class="text-danger"></span>
                         </div>
 
                         <div class="form-group mb-3">
-                            <label asp-for="oldprice" class="form-label">Old Price</label>
+                            <label asp-for="Oldprice" class="form-label">Old Price</label>
                             <div class="input-group">
                                 <span class="input-group-text">$</span>
-                                <input asp-for="oldprice" class="form-control" type="number" step="0.01" placeholder="0.00" />
+                                <input asp-for="Oldprice" class="form-control" type="number" step="0.01" placeholder="0.00" />
                             </div>
-                            <span asp-validation-for="oldprice" class="text-danger"></span>
+                            <span asp-validation-for="Oldprice" class="text-danger"></span>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group mb-3">
-                            <label asp-for="newprice" class="form-label">New Price <span class="text-danger">*</span></label>
+                            <label asp-for="Newprice" class="form-label">New Price <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text">$</span>
-                                <input asp-for="newprice" class="form-control" type="number" step="0.01" placeholder="0.00" required />
+                                <input asp-for="Newprice" class="form-control" type="number" step="0.01" placeholder="0.00" required />
                             </div>
-                            <span asp-validation-for="newprice" class="text-danger"></span>
+                            <span asp-validation-for="Newprice" class="text-danger"></span>
                         </div>
 
                         <div class="form-group mb-3">
-                            <label asp-for="changedate" class="form-label">Change Date</label>
-                            <input asp-for="changedate" class="form-control" type="datetime-local" />
-                            <span asp-validation-for="changedate" class="text-danger"></span>
+                            <label asp-for="Changedate" class="form-label">Change Date</label>
+                            <input asp-for="Changedate" class="form-control" type="datetime-local" />
+                            <span asp-validation-for="Changedate" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                     <button type="submit" class="btn btn-primary">
                         <i class="fas fa-save"></i> Update Price Change
                     </button>
-                    <a asp-action="Details" asp-route-id="@Model.changeid" class="btn btn-info">
+                    <a asp-action="Details" asp-route-id="@Model.Changeid" class="btn btn-info">
                         <i class="fas fa-eye"></i> View Details
                     </a>
                     <a asp-action="Index" class="btn btn-secondary">

@@ -1,4 +1,4 @@
-﻿@model RetailMasters.Models.pricechange
+﻿@model RetailMasters.Models.Pricechange
 
 @{
     ViewData["Title"] = "Price Change Details";
@@ -8,7 +8,7 @@
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2>@ViewData["Title"]</h2>
         <div>
-            <a asp-action="Edit" asp-route-id="@Model.changeid" class="btn btn-warning">
+            <a asp-action="Edit" asp-route-id="@Model.Changeid" class="btn btn-warning">
                 <i class="fas fa-edit"></i> Edit
             </a>
             <a asp-action="Index" class="btn btn-secondary">
@@ -19,7 +19,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h5 class="card-title mb-0">Change ID: @Model.changeid</h5>
+            <h5 class="card-title mb-0">Change ID: @Model.Changeid</h5>
         </div>
         <div class="card-body">
             <div class="row">
@@ -27,14 +27,14 @@
                     <dl class="row">
                         <dt class="col-sm-4">Fuel Type:</dt>
                         <dd class="col-sm-8">
-                            <strong>@Html.DisplayFor(model => model.fueltype.fueltypename)</strong>
+                            <strong>@Html.DisplayFor(model => model.Fueltype.Fueltypename)</strong>
                         </dd>
 
                         <dt class="col-sm-4">Old Price:</dt>
                         <dd class="col-sm-8">
-                            @if (Model.oldprice.HasValue)
+                            @if (Model.Oldprice.HasValue)
                             {
-                                <span class="text-muted">@Model.oldprice.Value.ToString("C")</span>
+                                <span class="text-muted">@Model.Oldprice.Value.ToString("C")</span>
                             }
                             else
                             {
@@ -44,9 +44,9 @@
 
                         <dt class="col-sm-4">New Price:</dt>
                         <dd class="col-sm-8">
-                            @if (Model.newprice.HasValue)
+                            @if (Model.Newprice.HasValue)
                             {
-                                <strong class="text-primary">@Model.newprice.Value.ToString("C")</strong>
+                                <strong class="text-primary">@Model.Newprice.Value.ToString("C")</strong>
                             }
                             else
                             {
@@ -60,9 +60,9 @@
                     <dl class="row">
                         <dt class="col-sm-4">Price Difference:</dt>
                         <dd class="col-sm-8">
-                            @if (Model.oldprice.HasValue && Model.newprice.HasValue)
+                            @if (Model.Oldprice.HasValue && Model.Newprice.HasValue)
                             {
-                                var difference = Model.newprice.Value - Model.oldprice.Value;
+                                var difference = Model.Newprice.Value - Model.Oldprice.Value;
                                 if (difference > 0)
                                 {
                                     <span class="badge bg-success fs-6">+@difference.ToString("C")</span>
@@ -86,12 +86,12 @@
 
                         <dt class="col-sm-4">Change Date:</dt>
                         <dd class="col-sm-8">
-                            @if (Model.changedate.HasValue)
+                            @if (Model.Changedate.HasValue)
                             {
-                                <strong>@Model.changedate.Value.ToString("MMMM dd, yyyy")</strong>
+                                <strong>@Model.Changedate.Value.ToString("MMMM dd, yyyy")</strong>
 
                                 <br>
-                                <small class="text-muted">@Model.changedate.Value.ToString("hh:mm tt")</small>
+                                <small class="text-muted">@Model.Changedate.Value.ToString("hh:mm tt")</small>
                             }
                             else
                             {
@@ -105,10 +105,10 @@
 
         <div class="card-footer">
             <div class="btn-group" role="group">
-                <a asp-action="Edit" asp-route-id="@Model.changeid" class="btn btn-warning">
+                <a asp-action="Edit" asp-route-id="@Model.Changeid" class="btn btn-warning">
                     <i class="fas fa-edit"></i> Edit
                 </a>
-                <a asp-action="Delete" asp-route-id="@Model.changeid" class="btn btn-danger">
+                <a asp-action="Delete" asp-route-id="@Model.Changeid" class="btn btn-danger">
                     <i class="fas fa-trash"></i> Delete
                 </a>
                 <a asp-action="Index" class="btn btn-secondary">

@@ -21,7 +21,7 @@ namespace FuelRetailUI.Controllers
         // GET: sites
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.sites.Include(s => s.supplier);
+            var appDbContext = _context.sites.Include(s => s.Supplier);
             return View(await appDbContext.ToListAsync());
         }
 
@@ -34,8 +34,8 @@ namespace FuelRetailUI.Controllers
             }
 
             var site = await _context.sites
-                .Include(s => s.supplier)
-                .FirstOrDefaultAsync(m => m.siteid == id);
+                .Include(s => s.Supplier)
+                .FirstOrDefaultAsync(m => m.Siteid == id);
             if (site == null)
             {
                 return NotFound();
@@ -56,7 +56,7 @@ namespace FuelRetailUI.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("siteid,sitecode,description,supplierid,shiftstatus,isactive")] site site)
+        public async Task<IActionResult> Create([Bind("siteid,sitecode,description,supplierid,shiftstatus,isactive")] Site site)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace FuelRetailUI.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["supplierid"] = new SelectList(_context.suppliers, "supplierid", "supdesc", site.supplierid);
+            ViewData["supplierid"] = new SelectList(_context.suppliers, "supplierid", "supdesc", site.Supplierid);
             return View(site);
         }
 
@@ -81,7 +81,7 @@ namespace FuelRetailUI.Controllers
             {
                 return NotFound();
             }
-            ViewData["supplierid"] = new SelectList(_context.suppliers, "supplierid", "supdesc", site.supplierid);
+            ViewData["supplierid"] = new SelectList(_context.suppliers, "supplierid", "supdesc", site.Supplierid);
             return View(site);
         }
 
@@ -90,9 +90,9 @@ namespace FuelRetailUI.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("siteid,sitecode,description,supplierid,shiftstatus,isactive")] site site)
+        public async Task<IActionResult> Edit(int id, [Bind("siteid,sitecode,description,supplierid,shiftstatus,isactive")] Site site)
         {
-            if (id != site.siteid)
+            if (id != site.Siteid)
             {
                 return NotFound();
             }
@@ -106,7 +106,7 @@ namespace FuelRetailUI.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!siteExists(site.siteid))
+                    if (!siteExists(site.Siteid))
                     {
                         return NotFound();
                     }
@@ -117,7 +117,7 @@ namespace FuelRetailUI.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["supplierid"] = new SelectList(_context.suppliers, "supplierid", "supdesc", site.supplierid);
+            ViewData["supplierid"] = new SelectList(_context.suppliers, "supplierid", "supdesc", site.Supplierid);
             return View(site);
         }
 
@@ -130,8 +130,8 @@ namespace FuelRetailUI.Controllers
             }
 
             var site = await _context.sites
-                .Include(s => s.supplier)
-                .FirstOrDefaultAsync(m => m.siteid == id);
+                .Include(s => s.Supplier)
+                .FirstOrDefaultAsync(m => m.Siteid == id);
             if (site == null)
             {
                 return NotFound();
@@ -157,7 +157,7 @@ namespace FuelRetailUI.Controllers
 
         private bool siteExists(int id)
         {
-            return _context.sites.Any(e => e.siteid == id);
+            return _context.sites.Any(e => e.Siteid == id);
         }
     }
 }

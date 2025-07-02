@@ -27,7 +27,7 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var fueltype = await _context.fueltypes
-                .FirstOrDefaultAsync(m => m.fueltypeid == id);
+                .FirstOrDefaultAsync(m => m.Fueltypeid == id);
             if (fueltype == null) return NotFound();
 
             return View(fueltype);
@@ -42,7 +42,7 @@ namespace FeulRetailUI.Controllers
         // POST: FuelType/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("fueltypename,description")] fueltype fueltype)
+        public async Task<IActionResult> Create([Bind("fueltypename,description")] Fueltype fueltype)
         {
             if (ModelState.IsValid)
             {
@@ -67,9 +67,9 @@ namespace FeulRetailUI.Controllers
         // POST: FuelType/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("fueltypeid,fueltypename,description")] fueltype fueltype)
+        public async Task<IActionResult> Edit(int id, [Bind("fueltypeid,fueltypename,description")] Fueltype fueltype)
         {
-            if (id != fueltype.fueltypeid) return NotFound();
+            if (id != fueltype.Fueltypeid) return NotFound();
 
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace FeulRetailUI.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!FuelTypeExists(fueltype.fueltypeid)) return NotFound();
+                    if (!FuelTypeExists(fueltype.Fueltypeid)) return NotFound();
                     else throw;
                 }
                 return RedirectToAction(nameof(Index));
@@ -94,7 +94,7 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var fueltype = await _context.fueltypes
-                .FirstOrDefaultAsync(m => m.fueltypeid == id);
+                .FirstOrDefaultAsync(m => m.Fueltypeid == id);
             if (fueltype == null) return NotFound();
 
             return View(fueltype);
@@ -117,7 +117,7 @@ namespace FeulRetailUI.Controllers
 
         private bool FuelTypeExists(int id)
         {
-            return _context.fueltypes.Any(e => e.fueltypeid == id);
+            return _context.fueltypes.Any(e => e.Fueltypeid == id);
         }
     }
 }
