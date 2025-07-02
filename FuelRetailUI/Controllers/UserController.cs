@@ -18,7 +18,7 @@ namespace FeulRetailUI.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var users = _context.users.Include(u => u.role);
+            var users = _context.users.Include(u => u.Role);
             return View(await users.ToListAsync());
         }
 
@@ -27,8 +27,8 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var user = await _context.users
-                .Include(u => u.role)
-                .FirstOrDefaultAsync(m => m.userid == id);
+                .Include(u => u.Role)
+                .FirstOrDefaultAsync(m => m.Userid == id);
             if (user == null) return NotFound();
 
             return View(user);
@@ -37,12 +37,12 @@ namespace FeulRetailUI.Controllers
         public IActionResult Create()
         {
             ViewData["roleid"] = new SelectList(_context.roles, "roleid", "rolename");
-            return View(new user { isactive = true });
+            return View(new User { Isactive = true });
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("username,passwordhash,roleid,email,isactive")] user user)
+        public async Task<IActionResult> Create([Bind("username,passwordhash,roleid,email,isactive")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -50,7 +50,7 @@ namespace FeulRetailUI.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["roleid"] = new SelectList(_context.roles, "roleid", "rolename", user.roleid);
+            ViewData["roleid"] = new SelectList(_context.roles, "roleid", "rolename", user.Roleid);
             return View(user);
         }
 
@@ -61,15 +61,15 @@ namespace FeulRetailUI.Controllers
             var user = await _context.users.FindAsync(id);
             if (user == null) return NotFound();
 
-            ViewData["roleid"] = new SelectList(_context.roles, "roleid", "rolename", user.roleid);
+            ViewData["roleid"] = new SelectList(_context.roles, "roleid", "rolename", user.Roleid);
             return View(user);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("userid,username,passwordhash,roleid,email,isactive")] user user)
+        public async Task<IActionResult> Edit(int id, [Bind("userid,username,passwordhash,roleid,email,isactive")] User user)
         {
-            if (id != user.userid) return NotFound();
+            if (id != user.Userid) return NotFound();
 
             if (ModelState.IsValid)
             {
@@ -80,12 +80,12 @@ namespace FeulRetailUI.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!_context.users.Any(e => e.userid == id)) return NotFound();
+                    if (!_context.users.Any(e => e.Userid == id)) return NotFound();
                     else throw;
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["roleid"] = new SelectList(_context.roles, "roleid", "rolename", user.roleid);
+            ViewData["roleid"] = new SelectList(_context.roles, "roleid", "rolename", user.Roleid);
             return View(user);
         }
 
@@ -94,8 +94,8 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var user = await _context.users
-                .Include(u => u.role)
-                .FirstOrDefaultAsync(m => m.userid == id);
+                .Include(u => u.Role)
+                .FirstOrDefaultAsync(m => m.Userid == id);
             if (user == null) return NotFound();
 
             return View(user);

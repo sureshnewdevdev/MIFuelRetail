@@ -38,7 +38,7 @@ namespace FeulRetailUI.Controllers
         public IActionResult Create()
         {
             ViewData["supplierid"] = new SelectList(_context.suppliers, "supplierid", "supdesc");
-            return View(new site { isactive = true });
+            return View(new Site { Isactive = true });
         }
 
         [HttpPost]

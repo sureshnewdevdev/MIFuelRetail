@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RetailMasters.Models.user>
+﻿@model IEnumerable<RetailMasters.Models.User>
 
 <h2>Users</h2>
 
@@ -19,15 +19,15 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>@item.userid</td>
-            <td>@item.username</td>
-            <td>@item.email</td>
-            <td>@item.isactive</td>
-            <td>@item.role?.rolename</td>
+            <td>@item.Userid</td>
+            <td>@item.Username</td>
+            <td>@item.Email</td>
+            <td>@item.Isactive</td>
+            <td>@item.Role?.Rolename</td>
             <td>
-                <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.userid">Details</a>
-                <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.userid">Edit</a>
-                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.userid">Delete</a>
+                <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Userid">Details</a>
+                <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.Userid">Edit</a>
+                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Userid">Delete</a>
             </td>
         </tr>
     }

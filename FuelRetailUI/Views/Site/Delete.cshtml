@@ -24,27 +24,27 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.shiftstatus)
+            @Html.DisplayNameFor(model => model.Shiftstatus)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.shiftstatus)
+            @Html.DisplayFor(model => model.Shiftstatus)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.isactive)
+            @Html.DisplayNameFor(model => model.Isactive)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.isactive)
+            @Html.DisplayFor(model => model.Isactive)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.supplier)
+            @Html.DisplayNameFor(model => model.Supplier)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.supplier.supdesc)
+            @Html.DisplayFor(model => model.Supplier.Supdesc)
         </dd>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="siteid" />
+        <input type="hidden" asp-for="Siteid" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>

@@ -1,4 +1,4 @@
-﻿@model RetailMasters.Models.valetprice
+﻿@model RetailMasters.Models.Valetprice
 
 @{
     ViewData["Title"] = "Valet Price Details";
@@ -11,20 +11,20 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">Site</dt>
-        <dd class="col-sm-10">@Model.site?.sitecode</dd>
+        <dd class="col-sm-10">@Model.Site?.Sitecode</dd>
 
         <dt class="col-sm-2">Valet Type</dt>
-        <dd class="col-sm-10">@Model.valettype?.valettypename</dd>
+        <dd class="col-sm-10">@Model.Valettype?.Valettypename</dd>
 
         <dt class="col-sm-2">Price</dt>
-        <dd class="col-sm-10">@Model.price</dd>
+        <dd class="col-sm-10">@Model.Price</dd>
 
         <dt class="col-sm-2">Effective Date</dt>
-        <dd class="col-sm-10">@Model.effectivedate</dd>
+        <dd class="col-sm-10">@Model.Effectivedate</dd>
     </dl>
 </div>
 
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.valetpriceid" class="btn btn-primary">Edit</a>
+    <a asp-action="Edit" asp-route-id="@Model.Valetpriceid" class="btn btn-primary">Edit</a>
     <a asp-action="Index" class="btn btn-secondary">Back to List</a>
 </div>

@@ -1,4 +1,4 @@
-﻿@model RetailMasters.Models.user
+﻿@model RetailMasters.Models.User
 
 @{
     ViewData["Title"] = "Edit User";
@@ -7,39 +7,39 @@
 <h2>Edit User</h2>
 
 <form asp-action="Edit" method="post">
-    <input type="hidden" asp-for="userid" />
+    <input type="hidden" asp-for="Userid" />
 
     <div class="form-group">
-        <label asp-for="username" class="control-label">Username</label>
-        <input asp-for="username" class="form-control" />
-        <span asp-validation-for="username" class="text-danger"></span>
+        <label asp-for="Username" class="control-label">Username</label>
+        <input asp-for="Username" class="form-control" />
+        <span asp-validation-for="Username" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="passwordhash" class="control-label">Password</label>
-        <input asp-for="passwordhash" class="form-control" type="password" />
-        <span asp-validation-for="passwordhash" class="text-danger"></span>
+        <label asp-for="Passwordhash" class="control-label">Password</label>
+        <input asp-for="Passwordhash" class="form-control" type="password" />
+        <span asp-validation-for="Passwordhash" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="email" class="control-label">Email</label>
-        <input asp-for="email" class="form-control" />
-        <span asp-validation-for="email" class="text-danger"></span>
+        <label asp-for="Email" class="control-label">Email</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
     </div>
 
     <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" name="isactive" @(Model != null && Model.isactive == true ? "checked" : "") />
+        <input type="checkbox" class="form-check-input" name="isactive" @(Model != null && Model.Isactive == true ? "checked" : "") />
 
 
-        <label asp-for="isactive" class="form-check-label">Is Active</label>
+        <label asp-for="Isactive" class="form-check-label">Is Active</label>
     </div>
 
     <div class="form-group">
-        <label asp-for="roleid" class="control-label">Role</label>
-        <select asp-for="roleid" class="form-control" asp-items="ViewBag.roleid">
+        <label asp-for="Roleid" class="control-label">Role</label>
+        <select asp-for="Roleid" class="form-control" asp-items="ViewBag.roleid">
             <option value="">-- Select Role --</option>
         </select>
-        <span asp-validation-for="roleid" class="text-danger"></span>
+        <span asp-validation-for="Roleid" class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-primary mt-3">Update</button>

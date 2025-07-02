@@ -1,4 +1,4 @@
-﻿@model RetailMasters.Models.emailgroup
+﻿@model RetailMasters.Models.Emailgroup
 
 <h2>Confirm Delete</h2>
 
@@ -6,14 +6,14 @@
 <hr />
 <dl class="row">
     <dt class="col-sm-2">ID</dt>
-    <dd class="col-sm-10">@Model.groupid</dd>
+    <dd class="col-sm-10">@Model.Groupid</dd>
 
     <dt class="col-sm-2">Group Name</dt>
-    <dd class="col-sm-10">@Model.groupname</dd>
+    <dd class="col-sm-10">@Model.Groupname</dd>
 </dl>
 
 <form asp-action="Delete" method="post">
-    <input type="hidden" asp-for="groupid" />
+    <input type="hidden" asp-for="Groupid" />
     <button type="submit" class="btn btn-danger">Delete</button>
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>

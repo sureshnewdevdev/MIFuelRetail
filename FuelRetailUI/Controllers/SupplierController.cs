@@ -27,7 +27,7 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var supplier = await _context.suppliers
-                .FirstOrDefaultAsync(m => m.supplierid == id);
+                .FirstOrDefaultAsync(m => m.Supplierid == id);
             if (supplier == null) return NotFound();
 
             return View(supplier);
@@ -42,7 +42,7 @@ namespace FeulRetailUI.Controllers
         // POST: Supplier/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("supdesc")] supplier supplier)
+        public async Task<IActionResult> Create([Bind("supdesc")] Supplier supplier)
         {
             if (ModelState.IsValid)
             {
@@ -67,9 +67,9 @@ namespace FeulRetailUI.Controllers
         // POST: Supplier/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("supplierid,supdesc")] supplier supplier)
+        public async Task<IActionResult> Edit(int id, [Bind("supplierid,supdesc")] Supplier supplier)
         {
-            if (id != supplier.supplierid) return NotFound();
+            if (id != supplier.Supplierid) return NotFound();
 
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace FeulRetailUI.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!SupplierExists(supplier.supplierid)) return NotFound();
+                    if (!SupplierExists(supplier.Supplierid)) return NotFound();
                     else throw;
                 }
                 return RedirectToAction(nameof(Index));
@@ -94,7 +94,7 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var supplier = await _context.suppliers
-                .FirstOrDefaultAsync(m => m.supplierid == id);
+                .FirstOrDefaultAsync(m => m.Supplierid == id);
             if (supplier == null) return NotFound();
 
             return View(supplier);
@@ -117,7 +117,7 @@ namespace FeulRetailUI.Controllers
 
         private bool SupplierExists(int id)
         {
-            return _context.suppliers.Any(e => e.supplierid == id);
+            return _context.suppliers.Any(e => e.Supplierid == id);
         }
     }
 }

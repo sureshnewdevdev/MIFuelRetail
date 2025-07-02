@@ -17,8 +17,8 @@ namespace FeulRetailUI.Controllers
         public async Task<IActionResult> Index()
         {
             var prices = _context.valetprices
-                .Include(v => v.site)
-                .Include(v => v.valettype);
+                .Include(v => v.Site)
+                .Include(v => v.Valettype);
             return View(await prices.ToListAsync());
         }
 
@@ -27,9 +27,9 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var price = await _context.valetprices
-                .Include(v => v.site)
-                .Include(v => v.valettype)
-                .FirstOrDefaultAsync(m => m.valetpriceid == id);
+                .Include(v => v.Site)
+                .Include(v => v.Valettype)
+                .FirstOrDefaultAsync(m => m.Valetpriceid == id);
 
             if (price == null) return NotFound();
 
@@ -44,7 +44,7 @@ namespace FeulRetailUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("siteid,valettypeid,price,effectivedate")] valetprice valetprice)
+        public async Task<IActionResult> Create([Bind("siteid,valettypeid,price,effectivedate")] Valetprice valetprice)
         {
             // Remove navigation properties from validation
             ModelState.Remove("site");
@@ -61,7 +61,7 @@ namespace FeulRetailUI.Controllers
             LogValidationErrors();
 
             // Repopulate dropdowns if validation fails
-            await PopulateDropdownsAsync(valetprice.siteid, valetprice.valettypeid);
+            await PopulateDropdownsAsync(valetprice.Siteid, valetprice.Valettypeid);
             return View(valetprice);
         }
 
@@ -72,15 +72,15 @@ namespace FeulRetailUI.Controllers
             var valetprice = await _context.valetprices.FindAsync(id);
             if (valetprice == null) return NotFound();
 
-            await PopulateDropdownsAsync(valetprice.siteid, valetprice.valettypeid);
+            await PopulateDropdownsAsync(valetprice.Siteid, valetprice.Valettypeid);
             return View(valetprice);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("valetpriceid,siteid,valettypeid,price,effectivedate")] valetprice valetprice)
+        public async Task<IActionResult> Edit(int id, [Bind("valetpriceid,siteid,valettypeid,price,effectivedate")] Valetprice valetprice)
         {
-            if (id != valetprice.valetpriceid) return NotFound();
+            if (id != valetprice.Valetpriceid) return NotFound();
 
             // Remove navigation properties from validation
             ModelState.Remove("site");
@@ -96,7 +96,7 @@ namespace FeulRetailUI.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!await ValetPriceExistsAsync(valetprice.valetpriceid))
+                    if (!await ValetPriceExistsAsync(valetprice.Valetpriceid))
                     {
                         return NotFound();
                     }
@@ -111,7 +111,7 @@ namespace FeulRetailUI.Controllers
             LogValidationErrors();
 
             // Repopulate dropdowns if validation fails
-            await PopulateDropdownsAsync(valetprice.siteid, valetprice.valettypeid);
+            await PopulateDropdownsAsync(valetprice.Siteid, valetprice.Valettypeid);
             return View(valetprice);
         }
 
@@ -120,9 +120,9 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var valetprice = await _context.valetprices
-                .Include(v => v.site)
-                .Include(v => v.valettype)
-                .FirstOrDefaultAsync(m => m.valetpriceid == id);
+                .Include(v => v.Site)
+                .Include(v => v.Valettype)
+                .FirstOrDefaultAsync(m => m.Valetpriceid == id);
 
             if (valetprice == null) return NotFound();
 
@@ -171,7 +171,7 @@ namespace FeulRetailUI.Controllers
         /// <returns>True if exists, false otherwise</returns>
         private async Task<bool> ValetPriceExistsAsync(int id)
         {
-            return await _context.valetprices.AnyAsync(e => e.valetpriceid == id);
+            return await _context.valetprices.AnyAsync(e => e.Valetpriceid == id);
         }
 
         /// <summary>

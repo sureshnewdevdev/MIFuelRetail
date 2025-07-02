@@ -1,4 +1,4 @@
-﻿@model RetailMasters.Models.supplier
+﻿@model RetailMasters.Models.Supplier
 
 @{
     ViewData["Title"] = "Create Supplier";
@@ -8,9 +8,9 @@
 
 <form asp-action="Create" method="post">
     <div class="form-group">
-        <label asp-for="supdesc"></label>
-        <input asp-for="supdesc" class="form-control" />
-        <span asp-validation-for="supdesc" class="text-danger"></span>
+        <label asp-for="Supdesc"></label>
+        <input asp-for="Supdesc" class="form-control" />
+        <span asp-validation-for="Supdesc" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-success mt-2">Save</button>
     <a asp-action="Index" class="btn btn-secondary mt-2">Cancel</a>

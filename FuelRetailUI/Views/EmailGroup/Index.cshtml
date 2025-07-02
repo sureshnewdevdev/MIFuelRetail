@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RetailMasters.Models.emailgroup>
+﻿@model IEnumerable<RetailMasters.Models.Emailgroup>
 
 @{
     ViewData["Title"] = "Email Groups";
@@ -20,12 +20,12 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>@item.groupid</td>
-            <td>@item.groupname</td>
+            <td>@item.Groupid</td>
+            <td>@item.Groupname</td>
             <td>
-                <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.groupid">Details</a>
-                <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.groupid">Edit</a>
-                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.groupid">Delete</a>
+                <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Groupid">Details</a>
+                <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.Groupid">Edit</a>
+                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Groupid">Delete</a>
             </td>
         </tr>
     }

@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[RetailMasters.Models.site, RetailMasters, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[RetailMasters.Models.Site, RetailMasters, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -29,13 +29,13 @@
     "Parameters": [
       {
         "Name": "site",
-        "Type": "RetailMasters.Models.site",
+        "Type": "RetailMasters.Models.Site",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "RetailMasters.Models.site",
+        "Type": "RetailMasters.Models.Site",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -61,7 +61,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "RetailMasters.Models.site",
+        "Type": "RetailMasters.Models.Site",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -86,7 +86,7 @@
       },
       {
         "Name": "site",
-        "Type": "RetailMasters.Models.site",
+        "Type": "RetailMasters.Models.Site",
         "IsRequired": true
       }
     ],

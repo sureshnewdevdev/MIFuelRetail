@@ -1,4 +1,4 @@
-﻿@model RetailMasters.Models.supplier
+﻿@model RetailMasters.Models.Supplier
 
 @{
     ViewData["Title"] = "Delete Supplier";
@@ -11,15 +11,15 @@
 <div>
     <dl class="row">
         <dt class="col-sm-2">ID</dt>
-        <dd class="col-sm-10">@Model.supplierid</dd>
+        <dd class="col-sm-10">@Model.Supplierid</dd>
 
         <dt class="col-sm-2">Description</dt>
-        <dd class="col-sm-10">@Model.supdesc</dd>
+        <dd class="col-sm-10">@Model.Supdesc</dd>
     </dl>
 </div>
 
 <form asp-action="Delete" method="post">
-    <input type="hidden" asp-for="supplierid" />
+    <input type="hidden" asp-for="Supplierid" />
     <button type="submit" class="btn btn-danger">Delete</button>
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>

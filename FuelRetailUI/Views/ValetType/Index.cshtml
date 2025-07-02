@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RetailMasters.Models.valettype>
+﻿@model IEnumerable<RetailMasters.Models.Valettype>
 
 @{
     ViewData["Title"] = "Valet Types";
@@ -20,12 +20,12 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.valettypeid</td>
-                <td>@item.valettypename</td>
+                <td>@item.Valettypeid</td>
+                <td>@item.Valettypename</td>
                 <td>
-                    <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.valettypeid">Details</a>
-                    <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.valettypeid">Edit</a>
-                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.valettypeid">Delete</a>
+                    <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Valettypeid">Details</a>
+                    <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.Valettypeid">Edit</a>
+                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Valettypeid">Delete</a>
                 </td>
             </tr>
         }

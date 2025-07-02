@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RetailMasters.Models.valetprice>
+﻿@model IEnumerable<RetailMasters.Models.Valetprice>
 
 <h2>Valet Prices</h2>
 
@@ -18,14 +18,14 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.site.sitecode</td>
-                <td>@item.valettype.valettypename</td>
-                <td>@item.price</td>
-                <td>@item.effectivedate</td>
+                <td>@item.Site.Sitecode</td>
+                <td>@item.Valettype.Valettypename</td>
+                <td>@item.Price</td>
+                <td>@item.Effectivedate</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.valetpriceid" class="btn btn-sm btn-warning">Edit</a>
-                    <a asp-action="Details" asp-route-id="@item.valetpriceid" class="btn btn-sm btn-info">Details</a>
-                    <a asp-action="Delete" asp-route-id="@item.valetpriceid" class="btn btn-sm btn-danger">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Valetpriceid" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Valetpriceid" class="btn btn-sm btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Valetpriceid" class="btn btn-sm btn-danger">Delete</a>
                 </td>
             </tr>
         }

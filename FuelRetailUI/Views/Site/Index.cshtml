@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RetailMasters.Models.site>
+﻿@model IEnumerable<RetailMasters.Models.Site>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,19 +13,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.sitecode)
+                @Html.DisplayNameFor(model => model.Sitecode)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.description)
+                @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.shiftstatus)
+                @Html.DisplayNameFor(model => model.Shiftstatus)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.isactive)
+                @Html.DisplayNameFor(model => model.Isactive)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.supplier)
+                @Html.DisplayNameFor(model => model.Supplier)
             </th>
             <th></th>
         </tr>
@@ -34,24 +34,24 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.sitecode)
+                @Html.DisplayFor(modelItem => item.Sitecode)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.description)
+                @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.shiftstatus)
+                @Html.DisplayFor(modelItem => item.Shiftstatus)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.isactive)
+                @Html.DisplayFor(modelItem => item.Isactive)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.supplier.supdesc)
+                @Html.DisplayFor(modelItem => item.Supplier.Supdesc)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.siteid">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.siteid">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.siteid">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Siteid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Siteid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Siteid">Delete</a>
             </td>
         </tr>
 }

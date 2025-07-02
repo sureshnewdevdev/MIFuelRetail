@@ -1,4 +1,4 @@
-﻿@model RetailMasters.Models.site
+﻿@model RetailMasters.Models.Site
 
 @{
     ViewData["Title"] = "Details";
@@ -11,38 +11,38 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sitecode)
+            @Html.DisplayNameFor(model => model.Sitecode)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sitecode)
+            @Html.DisplayFor(model => model.Sitecode)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.description)
+            @Html.DisplayNameFor(model => model.Description)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.description)
+            @Html.DisplayFor(model => model.Description)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.shiftstatus)
+            @Html.DisplayNameFor(model => model.Shiftstatus)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.shiftstatus)
+            @Html.DisplayFor(model => model.Shiftstatus)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.isactive)
+            @Html.DisplayNameFor(model => model.Isactive)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.isactive)
+            @Html.DisplayFor(model => model.Isactive)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.supplier)
+            @Html.DisplayNameFor(model => model.Supplier)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.supplier.supdesc)
+            @Html.DisplayFor(model => model.Supplier.Supdesc)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.siteid">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model?.Siteid">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

@@ -1,13 +1,13 @@
-﻿@model RetailMasters.Models.emailgroup
+﻿@model RetailMasters.Models.Emailgroup
 
 <h2>Edit Email Group</h2>
 
 <form asp-action="Edit" method="post">
-    <input type="hidden" asp-for="groupid" />
+    <input type="hidden" asp-for="Groupid" />
     <div class="form-group">
-        <label asp-for="groupname"></label>
-        <input asp-for="groupname" class="form-control" />
-        <span asp-validation-for="groupname" class="text-danger"></span>
+        <label asp-for="Groupname"></label>
+        <input asp-for="Groupname" class="form-control" />
+        <span asp-validation-for="Groupname" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-warning mt-2">Update</button>
     <a asp-action="Index" class="btn btn-secondary mt-2">Cancel</a>

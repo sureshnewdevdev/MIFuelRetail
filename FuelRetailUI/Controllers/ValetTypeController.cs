@@ -25,7 +25,7 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var valettype = await _context.valettypes
-                .FirstOrDefaultAsync(m => m.valettypeid == id);
+                .FirstOrDefaultAsync(m => m.Valettypeid == id);
             if (valettype == null) return NotFound();
 
             return View(valettype);
@@ -38,7 +38,7 @@ namespace FeulRetailUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("valettypename")] valettype valettype)
+        public async Task<IActionResult> Create([Bind("valettypename")] Valettype valettype)
         {
             if (ModelState.IsValid)
             {
@@ -61,9 +61,9 @@ namespace FeulRetailUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("valettypeid,valettypename")] valettype valettype)
+        public async Task<IActionResult> Edit(int id, [Bind("valettypeid,valettypename")] Valettype valettype)
         {
-            if (id != valettype.valettypeid) return NotFound();
+            if (id != valettype.Valettypeid) return NotFound();
 
             if (ModelState.IsValid)
             {
@@ -74,7 +74,7 @@ namespace FeulRetailUI.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!_context.valettypes.Any(e => e.valettypeid == id))
+                    if (!_context.valettypes.Any(e => e.Valettypeid == id))
                         return NotFound();
                     else throw;
                 }
@@ -88,7 +88,7 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var valettype = await _context.valettypes
-                .FirstOrDefaultAsync(m => m.valettypeid == id);
+                .FirstOrDefaultAsync(m => m.Valettypeid == id);
             if (valettype == null) return NotFound();
 
             return View(valettype);

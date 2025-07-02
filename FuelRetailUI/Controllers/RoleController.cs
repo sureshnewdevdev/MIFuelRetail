@@ -25,7 +25,7 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var role = await _context.roles
-                .FirstOrDefaultAsync(m => m.roleid == id);
+                .FirstOrDefaultAsync(m => m.Roleid == id);
             if (role == null) return NotFound();
 
             return View(role);
@@ -38,7 +38,7 @@ namespace FeulRetailUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("rolename")] role role)
+        public async Task<IActionResult> Create([Bind("rolename")] Role role)
         {
             if (ModelState.IsValid)
             {
@@ -61,9 +61,9 @@ namespace FeulRetailUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("roleid,rolename")] role role)
+        public async Task<IActionResult> Edit(int id, [Bind("roleid,rolename")] Role role)
         {
-            if (id != role.roleid) return NotFound();
+            if (id != role.Roleid) return NotFound();
 
             if (ModelState.IsValid)
             {
@@ -74,7 +74,7 @@ namespace FeulRetailUI.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RoleExists(role.roleid)) return NotFound();
+                    if (!RoleExists(role.Roleid)) return NotFound();
                     else throw;
                 }
                 return RedirectToAction(nameof(Index));
@@ -87,7 +87,7 @@ namespace FeulRetailUI.Controllers
             if (id == null) return NotFound();
 
             var role = await _context.roles
-                .FirstOrDefaultAsync(m => m.roleid == id);
+                .FirstOrDefaultAsync(m => m.Roleid == id);
             if (role == null) return NotFound();
 
             return View(role);
@@ -108,7 +108,7 @@ namespace FeulRetailUI.Controllers
 
         private bool RoleExists(int id)
         {
-            return _context.roles.Any(e => e.roleid == id);
+            return _context.roles.Any(e => e.Roleid == id);
         }
     }
 }

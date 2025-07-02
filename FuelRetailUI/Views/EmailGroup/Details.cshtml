@@ -1,14 +1,14 @@
-﻿@model RetailMasters.Models.emailgroup
+﻿@model RetailMasters.Models.Emailgroup
 
 <h2>Email Group Details</h2>
 
 <dl class="row">
     <dt class="col-sm-2">ID</dt>
-    <dd class="col-sm-10">@Model.groupid</dd>
+    <dd class="col-sm-10">@Model.Groupid</dd>
 
     <dt class="col-sm-2">Group Name</dt>
-    <dd class="col-sm-10">@Model.groupname</dd>
+    <dd class="col-sm-10">@Model.Groupname</dd>
 </dl>
 
-<a asp-action="Edit" asp-route-id="@Model.groupid" class="btn btn-warning">Edit</a>
+<a asp-action="Edit" asp-route-id="@Model.Groupid" class="btn btn-warning">Edit</a>
 <a asp-action="Index" class="btn btn-secondary">Back</a>
